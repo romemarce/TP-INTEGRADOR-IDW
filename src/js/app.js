@@ -1,5 +1,6 @@
 import { initDatabase, getDatabase, setDatabase } from './database.js'
-
+import { showHeaderMenu } from './routes.js'
+showHeaderMenu()
 initDatabase()
 
 
