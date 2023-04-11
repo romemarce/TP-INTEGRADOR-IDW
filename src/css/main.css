@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Ronnia";
+  src: url('./../fonts/Ronnia-Regular.woff');
+}
+body, html{
+  font-family: Ronnia;
+}
+
 .main{
   margin: 20px;
 }
