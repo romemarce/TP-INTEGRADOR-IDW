@@ -27,7 +27,7 @@ const getCarreras = () => {
   const database = getDatabase()
   return database.carreras
 }
-console.log("Carreras",getCarreras());
+// console.log("Carreras",getCarreras());
 
 // update
 const updateCarrera = (id,nombre, tipo, duracion, modalidad) => {
