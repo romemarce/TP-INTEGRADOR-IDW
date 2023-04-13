@@ -1,8 +1,13 @@
 @import url('./normalize.css');
+@import url('./responsive.css');
 
 @font-face {
   font-family: "Ronnia";
   src: url('./../fonts/Ronnia-Regular.woff');
+}
+
+* {
+  --bg-principal: #1d1d36;
 }
 
 body, html{
@@ -47,7 +52,7 @@ body, html{
 }
 /* agregamos color al encabezado */
 .header{
-  background-color:darkred;
+  background-color:var(--bg-principal);
 }
 .header .img-princ{
   width: 270px;
@@ -55,5 +60,19 @@ body, html{
 }
 
 .footer{
-  background-color:darkred;
+  background-color:var(--bg-principal);
+  color: #fff;
+}
+
+/* Sistema de columnas */
+.container-columns{
+  padding: 20px 0;
+  margin: 0 auto;
+  max-width: 90%;
+}
+.columns-3{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  justify-content: space-between;
 }
