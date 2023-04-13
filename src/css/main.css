@@ -45,3 +45,12 @@ body, html{
   top: 10px;
   right: 10px;
 }
+/* agregamos color al encabezado */
+.header{
+  background-color:lightblue;
+  margin:auto;
+}
+.header .img-princ{
+  width: 270px;
+  height: 100px;
+}
