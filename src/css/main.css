@@ -47,10 +47,13 @@ body, html{
 }
 /* agregamos color al encabezado */
 .header{
-  background-color:lightblue;
-  margin:auto;
+  background-color:darkred;
 }
 .header .img-princ{
   width: 270px;
   height: 100px;
+}
+
+.footer{
+  background-color:darkred;
 }
