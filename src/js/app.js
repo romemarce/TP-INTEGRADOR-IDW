@@ -1,8 +1,9 @@
 import { initDatabase, getDatabase, setDatabase } from './database.js'
 import { showHeaderMenu } from './routes.js'
+import { getBlogPosts } from './blog.js'
 showHeaderMenu()
 initDatabase()
-
+getBlogPosts()
 
 
 const createCarrera = (nombre, tipo, duracion, modalidad) => {

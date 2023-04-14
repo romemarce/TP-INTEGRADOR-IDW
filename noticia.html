@@ -19,53 +19,31 @@
       </section>
     </header>
 
-    <main class="container-columns">
-      <h1>PORTADA</h1>
-      <hr />
-      <section class="columns-3" id="blog">
-        <article>
-          <img src="https://via.placeholder.com/150x150" alt=""> <br>
-          Titulo <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-          <a href="noticia.html?id=5">Ver mas</a>
-        </article>
-      </section>
+    <main class="container-columns" id="main-post">
+        <h1>Error</h1>
+        <hr />
+        Post no encontrado
     </main>
-
     <script>
-      // idea
+    const domPost = document.getElementById('main-post');
+    
+    // Obtenemos el id del post que viene como parametro
+    const params = window.location.search
+    const stringNumber = params.replace('?id=', '')
+    const postId = parseInt(stringNumber)
 
-      const BASE_URL = "https://www.fcad.uner.edu.ar/wp-json/wp/v2"
-
-      // https://developer.wordpress.org/rest-api/reference/posts/#list-posts
-
-      // https://www.fcad.uner.edu.ar/wp-json/wp/v2/posts
-      const getURLPosts =  `${BASE_URL}/posts/?per_page=6`
-      // https://www.fcad.uner.edu.ar/wp-json/wp/v2/posts/30901
-      const getURLPost = ( postId ) => `${BASE_URL}/posts/${postId}`
-
-      // let idsWithCome = ""
-      // let result =  await fetch() // [ {featured_media: "id" } ]
-      // res => res.json
-
-      // result.forEach(element => {
-      //   idsWithCome += element.featured_media + ","
-      // });
-      
-      // idsWithCome = idsWithCome.substring(0, idsWithCome.length - 1)
-
-      // await fetch(getURLMedias( idsWithCome ))
-
-      // https://developer.wordpress.org/rest-api/reference/media/#list-media
-
-      // Trae una sola imagen
-      // Dentro del objeto post viene "featured_media": 30904,
-      // https://www.fcad.uner.edu.ar/wp-json/wp/v2/media/30904
-      const getURLMedia = ( postId ) => `${BASE_URL}/media/${postId}`
-      
-      // Muchas imagenes segun id media/?include=30904,30897,30868
-      // const idsWithCome = 30904,30897,30868
-      const getURLMedias = ( idsWithCome = "" ) => `${BASE_URL}/media/?include=${idsWithCome}`
+    if (postId) {
+        // console.log(postId);
+        domPost.innerHTML = `
+        
+        <h1>Titulo</h1>
+      <hr />
+           <img src="https://via.placeholder.com/150x150" alt=""> <br>
+           <br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        
+        `
+    }
     </script>
     
     <footer class="footer">
