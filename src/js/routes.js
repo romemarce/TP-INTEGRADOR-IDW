@@ -54,6 +54,10 @@ const routesPanel = [
     name: "Materias",
     url: "./panel-materia.html",
   },
+  {
+    name: "Credito",
+    url: "./panel-credito.html",
+  },
 ];
 export const showHeaderPanel = () => {
   const ulDom = document.createElement("ul");

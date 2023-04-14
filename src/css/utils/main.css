@@ -6,7 +6,17 @@
 .columns-3 {
   display: grid;
   grid-template-columns: auto auto auto;
+}
+.columns-2{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.column-gap{
   gap: 10px;
+}
+.column-center{
+  justify-items: center;
+  justify-content: center;
 }
 /* =========== COMPONENTE ====== */
 .box-counter {
@@ -33,6 +43,104 @@
 }
 .bc-bordo {
   background-color: #956678;
+}
+/* --- */
+
+.form {
+  background-color: #f9ffff;
+  padding: 10px;
+  box-shadow: 0px 6px 5px -7px rgba(0, 0, 0, 0.75);
+}
+.form form{
+  max-width: 300px;
+  margin: 0 auto;
+}
+.form form input {
+  display: block;
+  margin-bottom: 10px;
+  border: 1px solid #cecece;
+  padding: 3px 5px;
+  width: 100%;
+}
+.form-buttons{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 10px auto;
+}
+.form-buttons button{
+  width: 100px;
+}
+.form h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.table-list{
+  background-color: #f9ffff;
+  padding: 10px;
+  box-shadow: 0px 6px 5px -7px rgba(0, 0, 0, 0.75);
+}
+.table-list-item{
+  display: grid;
+  grid-template-columns: 32px auto 100px 100px;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  align-items: center;
+  padding: 3px 5px;
+  margin-bottom: 5px;
+}
+
+/* BUTTONS */
+
+button[type="submit"],
+button[type="reset"],
+button[type="edit"],
+button[type="delete"]{
+  border-radius: 3px;
+  border: 0;
+  padding: 7px;
+  color: #3c3c3c;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover,
+button[type="edit"]:hover,
+button[type="delete"]:hover{
+  transition: all .4s ease;
+  cursor: pointer;
+}
+
+/* submit */
+button[type="submit"]{
+  background-color: #3ec487;
+}
+button[type="submit"]:hover{
+  background-color: #3ab87f;
+}
+/* reset */
+button[type="reset"]{
+  background-color: #ffdc7d;
+}
+button[type="reset"]:hover{
+  background-color: #eece76;
+}
+/* edit */
+button[type="edit"]{
+  background-color: #7cbef4;
+}
+button[type="edit"]:hover{
+  background-color: #71aedf;
+}
+/* delete */
+button[type="delete"]{
+  background-color: #f56c87;
+}
+button[type="delete"]:hover{
+  background-color: #dc6079;
 }
 /* =========== MARGENES ====== */
 .mt-3 {
