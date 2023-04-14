@@ -1,0 +1,139 @@
+@import url("./../utils/main.css");
+@import url("./responsive.css");
+
+.main-panel {
+  padding: 10px;
+  background: rgb(174, 238, 219);
+  background: radial-gradient(
+    circle,
+    rgba(174, 238, 219, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  height: 100%;
+}
+.content-panel {
+  display: grid;
+  grid-template-columns: 300px auto;
+  gap: 10px;
+}
+.menu {
+  background-color: #956678;
+}
+.menu ul {
+  margin: 10px;
+  padding: 0px;
+}
+.menu ul li {
+  list-style: none;
+}
+.menu ul li a {
+  display: block;
+  padding: 5px;
+  padding-left: 20px;
+  color: #f4f4f4;
+  text-decoration: none;
+}
+.menu ul li:hover a {
+  background-color: #9e7484;
+  transition: all 0.4s ease;
+}
+.menu .profile {
+  display: grid;
+  grid-template-columns: 50px auto;
+  gap: 0px;
+  margin: 0px auto;
+  margin-top: 20px;
+  max-width: 80%;
+}
+.menu .profile img {
+  border-radius: 100%;
+}
+.menu .profile .profile-title {
+  font-weight: bold;
+  color: #d2d0d0;
+}
+.menu .profile .profile-status {
+  color: #d2d0d0;
+}
+.menu .profile .profile-status::before {
+  content: "\2022";
+  color: #4ccd55;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0px 3px;
+}
+
+/* //////////////// PANEL //////////// */
+.panel {
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+.panel .panel-header {
+  background-color: #f9ffff;
+  padding: 10px;
+  box-shadow: 0px 6px 5px -7px rgba(0, 0, 0, 0.75);
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel .panel-header .panel-title h1 {
+  font-size: 20px;
+}
+.panel .panel-header .panel-title h2 {
+  font-size: 16px;
+  font-weight: initial;
+}
+.panel .panel-header .panel-date {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 5px 7px;
+}
+.panel .panel-board {
+}
+/* //////////////// UTILS //////////// */
+
+.columns-3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+
+.box-counter {
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;
+  color: #d2d0d0;
+
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.box-counter strong{
+    display: block;
+    font-size: 36px;
+}
+.bc-azul {
+  background-color: #43627f;
+}
+.bc-celeste {
+  background-color: #72aed2;
+}
+.bc-bordo {
+  background-color: #956678;
+}
+
+.mt-3 {
+  margin-top: 30px;
+}
+.mb-3 {
+  margin-bottom: 30px;
+}
+/* //////////////// RESPONSIVE //////////// */
+@media screen and (max-width: 42em) {
+  .content-panel {
+    grid-template-columns: auto;
+  }
+}

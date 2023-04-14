@@ -1,8 +1,13 @@
 import { initDatabase, getDatabase, setDatabase } from './database.js'
 import { showHeaderPanel } from './routes.js'
+import { getCurrentDay } from './utils.js'
 showHeaderPanel()
 initDatabase()
 
+const domPanelDate = document.getElementById('panel-date')
+if (domPanelDate) {
+  domPanelDate.innerHTML = getCurrentDay()
+}
 
 
 const createCarrera = (nombre, tipo, duracion, modalidad) => {

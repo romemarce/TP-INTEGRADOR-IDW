@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/panel.css" />
+    <title>Bedelia - Estudiantes</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/css/main.css">
-  <title>UNER - Bedelia</title>
-</head>
+  <body>
+    <main class="main-panel">
+      <section class="content-panel">
+        <header class="menu">
+          <div class="profile">
+            <img src="https://via.placeholder.com/50x50" alt="profile" />
+            <ul>
+              <li class="profile-title">Profesor / Alumnado</li>
+              <li class="profile-status">ONLINE</li>
+            </ul>
+          </div>
+          <nav id="menu-list"></nav>
+        </header>
+        <section class="panel">
+          <section class="panel-header">
+            <div class="panel-title">
+              <h1>Estudiantes</h1>
+              <h2>
+                Bienvenido al gestor de estudiantes
+              </h2>
+            </div>
+            <div class="panel-date" id="panel-date">fecha</div>
+          </section>
+          <section class="panel-board mt-3 mb-3">
+            <!-- Elementos posibles -->
+            
+          </section>
+        </section>
+      </section>
+    </main>
 
-<body>
-  <header id="menu-list"></header>
-  <main class="main">
-    <h1>Bedelia</h1>
-    <hr />
-  </main>
-  <script src="./src/js/panel.js" type="module"></script>
-</body>
-
+    <script src="./src/js/panel.js" type="module"></script>
+  </body>
 </html>

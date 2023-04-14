@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Ronnia";
+  src: url("./../../fonts/Ronnia-Regular.woff");
+}
+* {
+  font-family: "Ronnia";
+}

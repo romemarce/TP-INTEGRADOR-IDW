@@ -1,14 +1,7 @@
-@import url('./variables.css');
-@import url('./normalize.css');
+@import url('./utils/main.css');
 @import url('./responsive.css');
 
-@font-face {
-  font-family: "Ronnia";
-  src: url('./../fonts/Ronnia-Regular.woff');
-}
-
 body, html{
-  font-family: Ronnia;
   position: relative;
 }
 
