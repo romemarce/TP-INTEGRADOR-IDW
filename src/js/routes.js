@@ -39,6 +39,10 @@ export const showHeaderMenu = () => {
 
 const routesPanel = [
   {
+    name: "Inicio",
+    url: "./panel.html",
+  },
+  {
     name: "Estudiantes",
     url: "./panel-estudiante.html",
   },
