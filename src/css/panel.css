@@ -1,6 +1,12 @@
 @import url("./normalize.css");
 @import url("./variables.css");
-
+@font-face {
+  font-family: "Ronnia";
+  src: url("./../fonts/Ronnia-Regular.woff");
+}
+* {
+  font-family: "Ronnia";
+}
 .main-panel {
   padding: 10px;
   background: rgb(174, 238, 219);
@@ -12,33 +18,62 @@
   height: 100%;
 }
 .content-panel {
-    display: grid;
-    grid-template-columns: 300px auto;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 300px auto;
+  gap: 10px;
 }
-.menu{
-    background-color: #956678;
+.menu {
+  background-color: #956678;
 }
 .menu ul {
-    margin: 10px;
-    padding: 0px;
+  margin: 10px;
+  padding: 0px;
 }
 .menu ul li {
-    list-style: none;
+  list-style: none;
 }
-.menu ul li a{
-    display: block;
-    padding: 5px;
-    color: #f4f4f4;
-    text-decoration: none;
+.menu ul li a {
+  display: block;
+  padding: 5px;
+  padding-left: 20px;
+  color: #f4f4f4;
+  text-decoration: none;
+  /* text-transform: uppercase; */
 }
-.menu ul li:hover a{
-    background-color: #9e7484;
-    transition: all .4s ease;
+.menu ul li:hover a {
+  background-color: #9e7484;
+  transition: all 0.4s ease;
 }
-.panel{
-    background-color: #f4f4f4;
+/* //////////////// PANEL //////////// */
+.panel {
+  background-color: #f4f4f4;
+  padding: 10px;
 }
+.profile {
+  display: grid;
+  grid-template-columns: 50px auto;
+  gap: 0px;
+  margin: 0px auto;
+  margin-top: 20px;
+  max-width: 80%;
+}
+.profile img {
+  border-radius: 100%;
+}
+.profile .profile-title {
+  font-weight: bold;
+  color: #d2d0d0;
+}
+.profile .profile-status {
+  color: #d2d0d0;
+}
+.profile .profile-status::before {
+    content: "\2022";
+    color: #4ccd55;
+    font-weight: bold;
+    display: inline-block; 
+    margin: 0px 3px;
+  }
 @media screen and (max-width: 42em) {
   .content-panel {
     grid-template-columns: auto;
