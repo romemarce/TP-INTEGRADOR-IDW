@@ -1,13 +1,10 @@
+@import url('./variables.css');
 @import url('./normalize.css');
 @import url('./responsive.css');
 
 @font-face {
   font-family: "Ronnia";
   src: url('./../fonts/Ronnia-Regular.woff');
-}
-
-* {
-  --bg-principal: #1d1d36;
 }
 
 body, html{
@@ -96,11 +93,3 @@ body, html{
   gap: 10px;
   justify-content: space-between;
 }
-
-
-
-
-
-/* 
-  ////////////////// Panel /////////////////
-*/
