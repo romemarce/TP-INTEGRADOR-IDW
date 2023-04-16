@@ -52,15 +52,17 @@ body, html{
 }
 .menu-list {
 /* ul */
+text-align: center;
 }
 .menu-list .menu-item{
   display: inline-block;
   list-style: none;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 .menu-list .menu-item a{
   /* li */
-  color: wheat;
+  color: #F0F0F0;
+  text-decoration: none;
 }
 .menu-list .menu-item.bedelia a{
   /* li.bedelia */
@@ -192,4 +194,8 @@ body, html{
 .contact{
   color: var(--bg-secundario);
   padding-inline-start: 90px;
+}
+.date{
+  display: grid;
+  grid-template-columns: auto auto;
 }
