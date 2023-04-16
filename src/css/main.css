@@ -183,3 +183,13 @@ body, html{
   border-bottom: 20px solid white;
   transform: rotate(90deg);
 }
+/* 
+  ////////////////// CONTACTO /////////////////
+*/
+.direction{
+  text-align: center;
+}
+.contact{
+  color: var(--bg-secundario);
+  padding-inline-start: 90px;
+}
