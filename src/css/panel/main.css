@@ -107,8 +107,10 @@
 .credit-profile .banner{
   display: block;
   max-width: 100%;
+  width: 100%;
   object-fit: cover;
-  height: 150px;
+  height: 95px;
+  margin-bottom: 10%;
 }
 .credit-profile .avatar{
   width: 130px;
