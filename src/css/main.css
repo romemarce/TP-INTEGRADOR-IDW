@@ -193,9 +193,16 @@ text-align: center;
 }
 .contact{
   color: var(--bg-secundario);
-  padding-inline-start: 90px;
+  padding-inline-start: 20%;
 }
 .date{
   display: grid;
   grid-template-columns: auto auto;
+  padding-inline-start: 20%;
+}
+.date-uno h2{
+  color: var(--bg-secundario);
+}
+.date-dos h2{
+  color: var(--bg-secundario);
 }
