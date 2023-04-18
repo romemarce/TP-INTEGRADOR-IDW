@@ -214,3 +214,6 @@ text-align: center;
   text-decoration: none;
   color: black;
 }
+.container{
+  padding-inline-start: 40%;
+}
