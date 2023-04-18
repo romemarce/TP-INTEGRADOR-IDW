@@ -1,4 +1,5 @@
 const URL = '/src/db/contactos.json'
+const URL_BUSCADOR='/src/db/contactos.json/users?name='
 async function Contact(){
    const res= await fetch(URL)
    const data= await res.json();
@@ -11,7 +12,21 @@ async function Contact(){
 }
 
 async function Buscar(){
-
+    document.getElementById("buscar").addEventListener("click",()=>{
+        fetch(URL+ document.getElementById("usuario").value)
+            .then(res =>res.json())
+            .then(date =>{
+                if (date.length == 1)
+                    document.getElementById("contacto").innerHTML=
+                    `<p>Nombre:${datos[0].name}</p>
+                    <p>Telefono:${datos[0].tel}</p>`;
+                else
+                    document.getElementById("contacto").innerHTML = 'No existe el usuario con name=' +
+                    document.getElementById("usuario").value;
+            })
+    })
+     
 }
 
 Contact();
+Buscar();
