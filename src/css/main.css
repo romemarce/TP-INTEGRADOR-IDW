@@ -223,7 +223,12 @@ text-align: center;
 */
 .info-institucion{
   text-align: center;
+  font-size: 20px;
 }
 .mision-valor{
   grid-template-columns: auto auto;
+}
+.info-valores{
+  padding-inline-start: 30%;
+  font-size: 20px;
 }
