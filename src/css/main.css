@@ -251,8 +251,14 @@ text-align: center;
   padding-inline-start: 30%;
   font-size: 20px;
 }
-.mision h1{
+.mision{
+  width: 100%;
+  position: relative;
+  display: flex;
+  background-color:#B7B7B7 ;
+}
+.mision .mis{
   color: var(--bg-secundario);
-  padding-inline-start: 30%;
   font-size: 20px;
+  padding-inline-start: 0%;
 }
