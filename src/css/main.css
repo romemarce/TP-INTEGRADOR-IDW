@@ -233,13 +233,14 @@ text-align: center;
   font-size: 20px;
 }
 .mision-valor{
+  display: grid;
   grid-template-columns: auto auto;
 }
-.info-valores{
-  padding-inline-start: 30%;
+.valores h1{
+  padding-inline-start: 60%;
   font-size: 20px;
 }
-.info-mision{
-  padding-inline-start: 60%;
+.mision h1{
+  padding-inline-start: 30%;
   font-size: 20px;
 }
