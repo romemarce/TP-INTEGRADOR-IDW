@@ -210,7 +210,7 @@ text-align: center;
 .date-uno a{
   text-decoration: none;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
 }
 .date-dos h2{
   color: var(--bg-secundario);
@@ -219,7 +219,7 @@ text-align: center;
 .date-dos a{
   text-decoration: none;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
 }
 .container{
   padding-inline-start: 40%;
