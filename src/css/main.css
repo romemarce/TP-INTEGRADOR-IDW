@@ -236,32 +236,30 @@ text-align: center;
 .mision-valor{
   display: grid;
   grid-template-columns: auto auto;
+  /* max-width: 95%; */
+  margin:0 auto;
+
 }
 .valores .val{
   color: var(--bg-secundario);
-  padding-inline-start: 10%;
   font-size: 20px;
   text-align: center;
 }
 .valores h1{
   color: var(--bg-secundario);
-  padding-inline-start: 30%;
   font-size: 20px;
 }
 .valores p{
-  padding-inline-start: 30%;
+  padding-left: 30px;
   font-size: 20px;
 }
 .mision{
-  width: 80%;
-  right:30%;
-  position: relative;
-  display: flex;
-  background-color:#e5e5e5 ;
- 
+  /* background-color:#e5e5e5 ; */
+  background-color:var(--bg-principal);
+  color: #F0F0F0;
 }
 .mis{
   color: var(--bg-secundario);
   font-size: 20px;
-  padding-inline-start: 40%;
+  /* padding-inline-start: 40%; */
 }
