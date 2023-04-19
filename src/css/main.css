@@ -216,4 +216,14 @@ text-align: center;
 }
 .container{
   padding-inline-start: 40%;
+  
+}
+/* 
+  ////////////////// INSTITUCION /////////////////
+*/
+.info-institucion{
+  text-align: center;
+}
+.mision-valor{
+  grid-template-columns: auto auto;
 }
