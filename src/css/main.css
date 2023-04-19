@@ -236,11 +236,23 @@ text-align: center;
   display: grid;
   grid-template-columns: auto auto;
 }
+.valores .val{
+  color: var(--bg-secundario);
+  padding-inline-start: 10%;
+  font-size: 20px;
+  text-align: center;
+}
 .valores h1{
-  padding-inline-start: 60%;
+  color: var(--bg-secundario);
+  padding-inline-start: 30%;
+  font-size: 20px;
+}
+.valores p{
+  padding-inline-start: 30%;
   font-size: 20px;
 }
 .mision h1{
+  color: var(--bg-secundario);
   padding-inline-start: 30%;
   font-size: 20px;
 }
