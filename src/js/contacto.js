@@ -18,8 +18,8 @@ async function Buscar(){
             .then(date =>{
                 if (date.length == 1)
                     document.getElementById("contacto").innerHTML=
-                    `<p>Nombre:${datos[0].name}</p>
-                    <p>Telefono:${datos[0].tel}</p>`;
+                    `<p>Nombre:${date[0].name}</p>
+                    <p>Telefono:${date[0].tel}</p>`;
                 else
                     document.getElementById("contacto").innerHTML = 'No existe el usuario con name=' +
                     document.getElementById("usuario").value;
