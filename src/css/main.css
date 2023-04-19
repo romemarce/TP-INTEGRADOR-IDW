@@ -190,29 +190,36 @@ text-align: center;
 */
 .direction{
   text-align: center;
+  font-size: 20px;
 }
 .contact{
   color: var(--bg-secundario);
   padding-inline-start: 20%;
+  font-size: 20px;
 }
 .date{
   display: grid;
   grid-template-columns: auto auto;
   padding-inline-start: 20%;
+  
 }
 .date-uno h2{
   color: var(--bg-secundario);
+  font-size: 20px;
 }
 .date-uno a{
   text-decoration: none;
   color: black;
+  font-size: 20px;
 }
 .date-dos h2{
   color: var(--bg-secundario);
+  font-size: 20px;
 }
 .date-dos a{
   text-decoration: none;
   color: black;
+  font-size: 20px;
 }
 .container{
   padding-inline-start: 40%;
