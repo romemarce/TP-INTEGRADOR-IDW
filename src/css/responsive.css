@@ -1,5 +1,12 @@
 @media screen and (max-width: 42em) {
-  .columns-3 {
-    grid-template-columns: auto auto!important;
+  .valores{
+    border: 0 !important;
+    background-color: #f8fafb;
+    border-radius: 0px;
+  }
+  .mision{
+    background-color:var(--bg-principal);
+    color: #F0F0F0;
+    border-radius: 0px !important;;
   }
 }

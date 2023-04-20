@@ -234,32 +234,49 @@ text-align: center;
   
 }
 .mision-valor{
-  display: grid;
-  grid-template-columns: auto auto;
-  /* max-width: 95%; */
-  margin:0 auto;
-
+  max-width: 80%;
+  margin: 10px auto;
 }
-.valores .val{
+.mision-valor h1{
   color: var(--bg-secundario);
-  font-size: 20px;
   text-align: center;
 }
-.valores h1{
+.mision-valor h2{
   color: var(--bg-secundario);
-  font-size: 20px;
 }
-.valores p{
-  padding-left: 30px;
-  font-size: 20px;
+.mision-valor p{
+  text-align: justify;
+}
+
+.valores{
+  border: 3px solid var(--bg-principal);
+  background-color: #f8fafb;
+  border-radius: 10px 0px 0px 10px
 }
 .mision{
-  /* background-color:#e5e5e5 ; */
   background-color:var(--bg-principal);
   color: #F0F0F0;
+  border-radius: 0px 10px 10px 0px
 }
-.mis{
-  color: var(--bg-secundario);
+.valores, .mision {
+  padding: 20px;
+}
+.mision-valor h1,
+.mision-valor h2 {
   font-size: 20px;
-  /* padding-inline-start: 40%; */
+}
+.mision-valor ul{
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
+.mision-valor ul li {
+  list-style: none;
+}
+.mision-valor ul li::before {
+  content: "\2022";
+  color: var(--bg-secundario);
+  font-weight: bold;
+  display: inline-block;
+  margin: 0px 7px;
 }
