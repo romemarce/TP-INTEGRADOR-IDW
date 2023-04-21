@@ -280,3 +280,19 @@ text-align: center;
   display: inline-block;
   margin: 0px 7px;
 }
+/* 
+  ////////////////// PORTADA /////////////////
+*/
+.portada{
+  border: 2px solid red;
+  height:70%;
+  width: 99.9%;
+}
+.fcad{
+  height: 10%;
+  width: 99.9%;
+}
+.columnas{
+  border: 2px solid red;
+  text-align: center;
+}
