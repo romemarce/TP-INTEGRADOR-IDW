@@ -284,7 +284,7 @@ text-align: center;
   ////////////////// PORTADA /////////////////
 */
 .portada{
-  border: 2px solid red;
+ 
   height:70%;
   width: 99.9%;
 }
@@ -293,6 +293,33 @@ text-align: center;
   width: 99.9%;
 }
 .columnas{
-  border: 2px solid red;
+  
   text-align: center;
 }
+/* Columnas de 4 */
+.portugues_uno {
+  width: 70%;
+}
+.portugues_uno img {
+  width: 100%;
+}
+.beca{
+  width: 70%;
+}
+.beca img{
+  width: 100%;
+}
+.extencion{
+  width: 70%;
+}
+.extencion img{
+  width: 100%;
+}
+.beca_cuarto{
+  width: 70%;
+}
+.beca_cuarto img{
+  width: 100%;
+}
+
+
