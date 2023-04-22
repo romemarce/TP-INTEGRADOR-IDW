@@ -224,6 +224,9 @@ text-align: center;
 .container {
   padding-inline-start: 25%;
   display: flexbox;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #000;
 }
 
 .encabezado th{
