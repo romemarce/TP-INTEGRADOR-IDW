@@ -222,7 +222,7 @@ text-align: center;
   font-size: 15px;
 }
 .container {
-  padding-inline-start: 20%;
+  padding-inline-start: 25%;
   display: flexbox;
   text-align: left;
   vertical-align: top;
