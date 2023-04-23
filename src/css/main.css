@@ -234,9 +234,14 @@ text-align: center;
   width: 30%; 
   background-color:#DAF5FF 
 }
-.encabezado td{
-  padding-inline-start: 30%;
+.encabezado .name{
+  padding-inline-start: 0%;
   width: 30%; 
+  background-color:#DAF5FF 
+}
+.encabezado .numero{
+  padding-inline-start: 20%;
+  width: 10%; 
   background-color:#DAF5FF 
 }
 /* 

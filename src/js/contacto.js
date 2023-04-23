@@ -5,8 +5,8 @@ async function Contact(){
    const data= await res.json();
             let listDom = "";
             for ({name,tel} of data) {
-                listDom += `<tr><td>${name}</td>
-                            <td>${tel}</td></tr>`;
+                listDom += `<tr><td class="name">${name}</td>
+                            <td class="numero">${tel}</td></tr>`;
             }
             document.getElementById("contactos").innerHTML = listDom;
 }
