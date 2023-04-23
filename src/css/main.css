@@ -226,7 +226,6 @@ text-align: center;
   display: flexbox;
   text-align: left;
   vertical-align: top;
-  border: 1px solid #000;
 }
 
 .encabezado th {

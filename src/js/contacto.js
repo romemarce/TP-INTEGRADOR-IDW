@@ -11,22 +11,22 @@ async function Contact(){
             document.getElementById("contactos").innerHTML = listDom;
 }
 
-async function Buscar(){
-    document.getElementById("buscar").addEventListener("click",()=>{
-        fetch(URL+ document.getElementById("usuario").value)
-            .then(res =>res.json())
-            .then(date =>{
-                if (date.length == 1)
-                    document.getElementById("contacto").innerHTML=
-                    `<p>Nombre:${date[0].name}</p>
-                    <p>Telefono:${date[0].tel}</p>`;
-                else
-                    document.getElementById("contacto").innerHTML = 'No existe el usuario con name=' +
-                    document.getElementById("usuario").value;
-            })
-    })
+// async function Buscar(){
+//     document.getElementById("buscar").addEventListener("click",()=>{
+//         fetch(URL+ document.getElementById("usuario").value)
+//             .then(res =>res.json())
+//             .then(date =>{
+//                 if (date.length == 1)
+//                     document.getElementById("contacto").innerHTML=
+//                     `<p>Nombre:${date[0].name}</p>
+//                     <p>Telefono:${date[0].tel}</p>`;
+//                 else
+//                     document.getElementById("contacto").innerHTML = 'No existe el usuario con name=' +
+//                     document.getElementById("usuario").value;
+//             })
+//     })
      
-}
+// }
 
 Contact();
-Buscar();
+// Buscar();
