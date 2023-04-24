@@ -1,3 +1,5 @@
+const menuDom = document.getElementById("menu-list");
+
 const routesPanel = [
   {
     name: "Inicio",
