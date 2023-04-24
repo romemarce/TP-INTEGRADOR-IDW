@@ -1,8 +1,11 @@
 import { initDatabase, getDatabase, setDatabase } from './database.js'
 import { showHeaderPanel } from './routes.js'
-import { getCurrentDay } from './utils.js'
+import { getCurrentDay } from './components.js'
+
 showHeaderPanel()
 initDatabase()
+
+
 
 const domPanelDate = document.getElementById('panel-date')
 if (domPanelDate) {
@@ -22,9 +25,9 @@ const createCarrera = (nombre, tipo, duracion, modalidad) => {
     modalidad
   }
   // Agregamos elemento a carrear
-  database.carreras.push( nuevo )
+  database.carreras.push(nuevo)
   // Guardamos la carrera
-  setDatabase( database )
+  setDatabase(database)
 }
 
 const getCarreras = () => {
@@ -32,10 +35,10 @@ const getCarreras = () => {
   const database = getDatabase()
   return database.carreras
 }
-console.log("Carreras",getCarreras());
+// console.log("Carreras",getCarreras());
 
 // update
-const updateCarrera = (id,nombre, tipo, duracion, modalidad) => {
+const updateCarrera = (id, nombre, tipo, duracion, modalidad) => {
   // Obtenemos la database
   const database = getDatabase()
   if (database.carreras) {
@@ -47,7 +50,7 @@ const updateCarrera = (id,nombre, tipo, duracion, modalidad) => {
         carrera.modalidad = modalidad
       }
     });
-    setDatabase( database )
+    setDatabase(database)
   }
 }
 // updateCarrera(2,"Contador","Grado",5,"Presencial")

@@ -44,3 +44,17 @@ export const loadCarreras = async () => {
       .catch(err => console.log(err))
   }
 }
+
+export const getCurrentDay = () => {
+  const date = new Date();
+  let d = date.getDate();
+  let m = date.getMonth() + 1;
+  let y = date.getFullYear();
+  return `${d}/${m}/${y}`;
+};
+
+
+// const domBlog = document.getElementById('blog')
+// export const getBlogPosts = () => {
+//   if (domBlog) console.log("Load blog")
+// }

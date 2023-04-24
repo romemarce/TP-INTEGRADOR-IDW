@@ -48,8 +48,6 @@ const templateFooter = `
 </section>
 `;
 
-
-
 export const loadFooter = ()=>{
   const footer = document.getElementById('footer')
   if (footer) {
