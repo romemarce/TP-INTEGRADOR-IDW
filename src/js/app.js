@@ -1,4 +1,7 @@
+// Loaders
 import { loadFooter } from './layout.js';
+import { loadContact, loadCarreras } from './components.js';
+
 import { initDatabase, getDatabase, setDatabase } from './database.js'
 import { showHeaderMenu } from './routes.js'
 import { getBlogPosts } from './blog.js'
@@ -6,7 +9,12 @@ showHeaderMenu()
 initDatabase()
 getBlogPosts()
 
+// loaders
 loadFooter();
+loadCarreras();
+loadContact();
+
+
 
 const createCarrera = (nombre, tipo, duracion, modalidad) => {
   // Obtenemos la database
