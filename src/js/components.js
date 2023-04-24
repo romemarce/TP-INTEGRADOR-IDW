@@ -3,6 +3,7 @@ const CONTACT_JSON = '/src/db/contactos.json'
 export async function loadContact() {
   const contactosDom = document.getElementById("contactos");
   if (contactosDom) {
+    contactosDom.innerHTML = ""
     const res = await fetch(CONTACT_JSON)
     const data = await res.json();
     let listDom = "";
@@ -30,8 +31,8 @@ const templateCarrera = ({ name, type, year, mod }) => {
 
 export const loadCarreras = async () => {
   const carreraDom = document.getElementById('carrera');
-  carreraDom.innerHTML = ""
   if (carreraDom) {
+    carreraDom.innerHTML = ""
     await fetch("./src/db/carreras.json")
       .then(res => res.json())
       .then(data => {
