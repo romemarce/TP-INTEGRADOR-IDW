@@ -19,12 +19,21 @@ hr {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.column-gap{
+.gap-10{
   gap: 10px;
+}
+.gap-15{
+  gap: 15px;
+}
+.gap-20{
+  gap: 20px;
 }
 .column-center{
   justify-items: center;
   justify-content: center;
+}
+.column-between{
+  justify-content: space-between;
 }
 @media screen and (max-width: 42em) {
   .columns-3 {

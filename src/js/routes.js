@@ -3,7 +3,7 @@ const menuDom = document.getElementById("menu-list");
 const routes = [
   {
     name: "Portada",
-    url: "./index.html",
+    url: "./",
   },
   {
     name: "Información institucional",
