@@ -227,19 +227,21 @@ html {
   text-align: left;
   vertical-align: top;
 }
-
-.encabezado th {
-  padding-inline-start: 20%;
+.table-contact{
+  margin: 0 auto;
+}
+.table-contact th {
   width: 30%;
   background-color: #daf5ff;
 }
-.encabezado .name {
-  padding-inline-start: 0%;
+.table-contact td{
+  padding-left: 10px;
+}
+.table-contact .name {
   width: 30%;
   background-color: #daf5ff;
 }
-.encabezado .numero {
-  padding-inline-start: 20%;
+.table-contact .numero {
   width: 10%;
   background-color: #daf5ff;
 }
