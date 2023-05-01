@@ -18,15 +18,14 @@ export async function loadContact() {
 
 const templateCarrera = ({ name, type, year, mod }) => {
   return `
-    <article>
-      <ul>
-        <li><strong>${name}</strong></li>
-        <li>Tipo: ${type}</li>
-        <li>Duración: ${year}</li>
-        <li>Modalidad: ${mod}</li>
-      </ul>
-    </article>
-  `;
+  <article class="post-carrera">
+        <h3>${name}</h3>
+        <div class="post-carrera-items">
+          <span>${type}</span>
+          <span>${year}</span>
+          <span>${mod}</span>
+        </div>
+      </article>`;
 }
 
 export const loadCarreras = async () => {
