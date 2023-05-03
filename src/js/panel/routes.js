@@ -21,6 +21,10 @@ const routesPanel = [
     name: "Credito",
     url: "./panel-credito.html",
   },
+  {
+    name: "Sitio web",
+    url: "./",
+  },
 ];
 export const showHeaderPanel = () => {
   const ulDom = document.createElement("ul");

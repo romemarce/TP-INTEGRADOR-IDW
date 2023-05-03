@@ -5,3 +5,19 @@ export const getCurrentDay = () => {
   let y = date.getFullYear();
   return `${d}/${m}/${y}`;
 };
+
+
+export const loadProfile = () => {
+  const profileDom = document.getElementById('profile')
+  if (profileDom) {
+    profileDom.innerHTML += `
+      <section class="profile">
+        <img src="./src/img/B2xD.gif" alt="profile" />
+        <ul>
+          <li class="profile-title">Kakaroto</li>
+          <li class="profile-status">ONLINE</li>
+        </ul>
+      </section>
+    `;
+  }
+}

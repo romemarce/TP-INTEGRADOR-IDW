@@ -1,7 +1,8 @@
 import { initDatabase, getDatabase, setDatabase } from './database.js'
 import { showHeaderPanel } from './routes.js'
-import { getCurrentDay } from './components.js'
+import { getCurrentDay, loadProfile } from './components.js'
 
+loadProfile()
 showHeaderPanel()
 initDatabase()
 

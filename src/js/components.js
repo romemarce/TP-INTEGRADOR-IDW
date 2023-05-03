@@ -46,11 +46,12 @@ export const loadCarreras = async () => {
 }
 
 const templateFooter = `
-<section class="container-columns columns-3">
+<section class="container-columns ">
+<div class="columns-3">
   <section>
     <h3>UBICACIÓN</h3>
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bO3tFLszqhcVS3B3HaQ5Gl4VDmwDUjs&ehbc=2E312F"
-      width="100%" height="200" style="border: 0;" allowfullscreen="" loading="lazy"
+      width="300px" height="200" style="border: 0;" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
   <section>
@@ -92,6 +93,7 @@ const templateFooter = `
       <li>informes.fcad@uner.edu.ar</li>
     </ul>
   </section>
+</div>
 </section>
 `;
 

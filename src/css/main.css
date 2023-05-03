@@ -77,7 +77,6 @@ html {
   color: #fff;
 }
 
-
 /* 
   ////////////////// FACEBOOK /////////////////
 */
@@ -213,22 +212,28 @@ html {
   text-align: left;
   vertical-align: top;
 }
+
+
+
 .table-contact {
+  width: 100%;
   margin: 0 auto;
+  display: block;
+  overflow-y: scroll;
+  height: 300px;
 }
+
 .table-contact th {
-  width: 30%;
+  width: 1%;
   background-color: #daf5ff;
 }
 .table-contact td {
   padding-left: 10px;
 }
 .table-contact .name {
-  width: 30%;
   background-color: #daf5ff;
 }
 .table-contact .numero {
-  width: 10%;
   background-color: #daf5ff;
 }
 /* 
