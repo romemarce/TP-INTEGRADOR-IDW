@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -12,40 +12,46 @@
 <body>
   <header class="header">
     <section class="container-columns">
-      <img class="img-princ" src="./src/img/Instagram-CON-LOGO-fcad.png" alt="FCAD" />
+      <img class="img-princ" src="./src/img/logo-fcad.png" alt="FCAD" />
       <nav id="menu-list"></nav>
     </section>
   </header>
   <main class="main">
-    <h1 class="direction">Contacto</h1>
-    <hr />
-    <h1 class="contact">Correo Electrónico Institucionales</h1>
-    <div class="date">
-      <div class="date-uno">
-        <h2>Secretaría de Extencion Universitaria</h2>
-        <a href="mailto:informes.fcad@uner.edu.ar">informes.fcad@uner.edu.ar</a>
-        <h2>Oficina de Becas</h2>
-        <a href="mailto:estudiantes.fcad@uner.edu.ar">estudiantes.fcad@uner.edu.ar</a>
-        <h2>Teléfonos Directos</h2>
+    <h1 class="page-title">Contacto</h1>
+    <hr class="mb-3" />
+    <section class="container-columns">
+      <div class="columns-2 gap-20">
+        <article>
+          <h1 class="contact">Correo Electrónico Institucionales</h1>
+          <div class="date">
+            <div class="date-uno">
+              <h2>Secretaría de Extencion Universitaria</h2>
+              <a href="mailto:informes.fcad@uner.edu.ar">informes.fcad@uner.edu.ar</a>
+              <h2>Oficina de Becas</h2>
+              <a href="mailto:estudiantes.fcad@uner.edu.ar">estudiantes.fcad@uner.edu.ar</a>
+              <h2>Teléfonos Directos</h2>
+            </div>
+            <div class="date-dos">
+              <h2>Oficina de Ciencia y Técnica</h2>
+              <a href="mailto:oficinacyt.fcad@uner.edu.ar">oficinacyt.fcad@uner.edu.ar</a>
+              <h2>Oficina de Pasantías</h2>
+              <a href="mailto:pasantias.fcad@uner.edu.ar">pasantias.fcad@uner.edu.ar</a>
+            </div>
+          </div>
+        </article>
+        <table class="table-contact scrollbar mb-3">
+          <thead>
+            <tr>
+              <th>SECTOR</th>
+              <th>NUMERO</th>
+            </tr>
+          </thead>
+          <tbody id="contactos"></tbody>
+        </table>
       </div>
-      <div class="date-dos">
-        <h2>Oficina de Ciencia y Técnica</h2>
-        <a href="mailto:oficinacyt.fcad@uner.edu.ar">oficinacyt.fcad@uner.edu.ar</a>
-        <h2>Oficina de Pasantías</h2>
-        <a href="mailto:pasantias.fcad@uner.edu.ar">pasantias.fcad@uner.edu.ar</a>
-      </div>
-    </div>
-    <div class="container mb-3">
-      <table class="encabezado">
-        <thead>
-          <tr>
-            <th>SECTOR</th>
-            <th>NUMERO</th>
-          </tr>
-        </thead>
-        <tbody id="contactos"></tbody>
-      </table>
-    </div>
+    </section>
+
+
   </main>
   <footer class="footer" id="footer"></footer>
   <script src="./src/js/app.js" type="module"></script>

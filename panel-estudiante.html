@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/css/panel/main.css" />
-    <title>Bedelia - Estudiantes</title>
-  </head>
 
-  <body>
-    <main class="main-panel">
-      <section class="content-panel">
-        <header class="menu">
-          <div class="profile">
-            <img src="https://via.placeholder.com/50x50" alt="profile" />
-            <ul>
-              <li class="profile-title">Bedelia</li>
-              <li class="profile-status">ONLINE</li>
-            </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/css/panel/main.css" />
+  <title>Bedelia - Estudiantes</title>
+</head>
+
+<body>
+  <main class="main-panel">
+    <section class="content-panel">
+      <header class="menu">
+        <span id="profile"></span>
+        <span id="menu-list"></span>
+      </header>
+      <section class="panel">
+        <section class="panel-header">
+          <div class="panel-title">
+            <h1>Estudiantes</h1>
+            <h2>Bienvenido al gestor de estudiantes</h2>
           </div>
-          <nav id="menu-list"></nav>
-        </header>
-        <section class="panel">
-          <section class="panel-header">
-            <div class="panel-title">
-              <h1>Estudiantes</h1>
-              <h2>Bienvenido al gestor de estudiantes</h2>
-            </div>
-            <div class="panel-date" id="panel-date">fecha</div>
+          <div class="panel-date" id="panel-date">fecha</div>
+        </section>
+        <section class="panel-board mt-3 mb-3">
+          <!-- Formulario de carga -->
+          <section class="form">
+            <form id="add-entity" name="estudiante">
+              <h2>Crear nuevo</h2>
+              <div class="columns-2 gap-20">
+                <input type="number" name="dni" placeholder="Doc. de Identidad" />
+                <input type="text" name="lastname" placeholder="Apellido" />
+                <input type="text" name="name" placeholder="Nombre" />
+                <input type="date" name="birthday" placeholder="Fecha de Nacimiento" />
+                <input type="text" name="nationality" placeholder="Nacionalidad" />
+                <input type="email" name="email" placeholder="Correo Electrónico" />
+                <input type="number" name="phone" placeholder="Celular" />
+              </div>
+              <div class="form-buttons">
+                <button type="reset">Limpiar</button>
+                <button type="submit">Crear</button>
+              </div>
+            </form>
           </section>
-          <section class="panel-board mt-3 mb-3">
-            <!-- Formulario de carga -->
-            <section class="form">
-              <form id="add-entity" name="estudiante">
-                <h2>Crear nuevo</h2>
-                <input type="text" name="nombre" placeholder="Nombre" />
-                <input type="text" name="dni" placeholder="DNI" />
-                <div class="form-buttons">
-                  <button type="reset">Limpiar</button>
-                  <button type="submit">Crear</button>
-                </div>
-              </form>
-            </section>
-            <!-- Listado de elementos -->
-            <section class="table-list mt-3">
-              <h2 class="table-list-title">Estudiantes</h2>
-              <article class="table-list-item">
-                <span>0</span>
-                <span>Hernan Coronel</span>
-                <button type="edit">Editar</button>
-                <button type="delete">Eliminar</button>
-              </article>
-              <article class="table-list-item">
-                <span>1</span>
-                <span>Pablo Lescano</span>
-                <button type="edit">Editar</button>
-                <button type="delete">Eliminar</button>
-              </article>
-              <article class="table-list-item">
-                <span>2</span>
-                <span>Pocho La Pantera</span>
-                <button type="edit">Editar</button>
-                <button type="delete">Eliminar</button>
-              </article>
-            </section>
+          <!-- Listado de elementos -->
+          <section class="table-list mt-3">
+            <h2 class="table-list-title">Estudiantes</h2>
+            <article class="table-list-item">
+              <span>0</span>
+              <span>Hernan Coronel</span>
+              <button type="edit">Editar</button>
+              <button type="delete">Eliminar</button>
+            </article>
+            <article class="table-list-item">
+              <span>1</span>
+              <span>Pablo Lescano</span>
+              <button type="edit">Editar</button>
+              <button type="delete">Eliminar</button>
+            </article>
+            <article class="table-list-item">
+              <span>2</span>
+              <span>Pocho La Pantera</span>
+              <button type="edit">Editar</button>
+              <button type="delete">Eliminar</button>
+            </article>
           </section>
         </section>
       </section>
-    </main>
+    </section>
+  </main>
 
-    <script src="./src/js/panel/main.js" type="module"></script>
-  </body>
+  <script src="./src/js/panel/main.js" type="module"></script>
+</body>
+
 </html>
