@@ -1,5 +1,5 @@
 // Define utils database
-const KEYNAME = "__database_uner"
+const KEYNAME = "db_romero_panozzo"
 const LOCAL_STORAGE = window.localStorage
 
 export const setDatabase = (obj = {}) =>{
