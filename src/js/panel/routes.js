@@ -1,3 +1,5 @@
+const menuDom = document.getElementById("menu-list");
+
 const routesPanel = [
   {
     name: "Inicio",
@@ -18,6 +20,10 @@ const routesPanel = [
   {
     name: "Credito",
     url: "./panel-credito.html",
+  },
+  {
+    name: "Sitio web",
+    url: "./",
   },
 ];
 export const showHeaderPanel = () => {

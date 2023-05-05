@@ -49,11 +49,13 @@
   align-items: center;
 }
 .menu .profile img {
+  max-width: 50px;
+  height: 50px;
   border-radius: 100%;
 }
 .menu .profile .profile-title {
   font-weight: bold;
-  color: #d2d0d0;
+  color: #e9e9a8;
 }
 .menu .profile .profile-status {
   color: #d2d0d0;
