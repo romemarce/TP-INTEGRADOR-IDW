@@ -6,7 +6,7 @@ export const setDatabase = (obj = {}) =>{
   const value = JSON.stringify(obj)
   LOCAL_STORAGE.setItem(KEYNAME, value)
 
-  console.log("Data is saved");
+  console.log(`db actualizada!!`);
 }
 
 export const getDatabase = () => {

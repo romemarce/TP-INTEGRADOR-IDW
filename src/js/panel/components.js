@@ -21,3 +21,12 @@ export const loadProfile = () => {
     `;
   }
 }
+
+
+// export const Notification = (msg, func)=>{
+//   const body = document.getElementsByTagName('body');
+//   const modal = document.createElement("section");
+//         modal.classList.add("modal");
+
+
+// }

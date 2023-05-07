@@ -222,3 +222,6 @@ button[type="delete"]:hover{
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bg-principal-hover); 
 }
+.hidden {
+  display: none !important;
+}
