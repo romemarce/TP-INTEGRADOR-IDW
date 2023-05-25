@@ -54,7 +54,7 @@ export const getElements = (collection) => {
 }
 
 /**
- * Obtiene los elementos de una coleccion.
+ * Actualiza los elementos de una coleccion.
  * @param {element} elemento actualizado.
  * @param {collection} coleccion actual.
  */
@@ -63,7 +63,7 @@ export const updateElement = (element, collection) =>{
     const list = db[collection] || []
     if (list.length > 0) {
         list.forEach( e => {
-            if(e.id === element.id){
+            if(parseInt(e.id) === parseInt(element.id)){
                 e = {...e, ...element}
             }
         } )
