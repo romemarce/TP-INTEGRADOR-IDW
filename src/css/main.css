@@ -400,27 +400,31 @@ html {
   text-decoration: none;
   font-weight: bold;
 }
-/* .portugues_uno {
-  width: 70%;
+
+/* ========BANNER ==== */
+
+.portada .slide {
+  position: relative;
 }
-.portugues_uno img {
-  width: 100%;
+.portada .slide a {
+  color: #fff;
+  text-shadow: 1px 1px 5px black;
+  font-size: 20px;
 }
-.beca {
-  width: 70%;
+.portada .slide img {
+  object-fit: cover;
+  object-position: center;
+  height: 400px;
 }
-.beca img {
-  width: 100%;
+.portada p {
+  position: absolute;
+  top: 45%;
+  max-width: 80%;
+  margin:  0 auto;
+  left: 0;
+  right: 0;
 }
-.extencion {
-  width: 70%;
+
+.single-news img{
+  max-width: 100%;
 }
-.extencion img {
-  width: 100%;
-}
-.beca_cuarto {
-  width: 70%;
-}
-.beca_cuarto img {
-  width: 100%;
-} */

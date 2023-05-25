@@ -2,6 +2,7 @@ import {
   URL_FCAD_BANNER,
   URL_FCAD_IMAGES,
   URL_FCAD_PORTAL,
+  URL_FCAD_SINGLE,
 } from "./connexions.js";
 
 // Listado de contactos
@@ -104,10 +105,6 @@ export const loadFooter = () => {
   }
 };
 
-// const domBlog = document.getElementById('blog')
-// export const getBlogPosts = () => {
-//   if (domBlog) console.log("Load blog")
-// }
 const configBanner = {
   postList: [],
   counter: 0,
@@ -159,40 +156,66 @@ const getPostListUNER = async (fetchURL, isBanner = false) => {
   return completePosts;
 };
 
+const updateCurrentBanner = (bannerDom = false) => {
+  if (bannerDom) {
+    const pictureDom = bannerDom.querySelector("picture");
+    const { id, title, featured_media_img } =
+      configBanner.postList[configBanner.counter];
+    pictureDom.innerHTML = `   
+    <section class="slide">
+        <a href="noticia.html?id=${id}">
+          <img class="fcad" src="${featured_media_img}" alt="uner" />
+          <p>${title}</p>
+        </a>
+      </section>
+    `;
+  }
+};
+
 const loadBanner = async () => {
   const bannerDom = document.getElementById("portada-banner");
   if (bannerDom) {
-    // bannerDom.innerHTML = "";
-
     configBanner.postList = await getPostListUNER(URL_FCAD_BANNER(3), true);
-    console.log(configBanner.postList);
+    updateCurrentBanner(bannerDom, configBanner.counter);
 
-    const handleLeft = (e) => {
+    if (configBanner.postList.length > 0) {
+      configBanner.counterMax = configBanner.postList.length - 1;
+      // console.log(configBanner);
+    }
+
+    const previusBanner = (e) => {
       e.preventDefault();
-      console.log("anterior");
+      configBanner.counter--;
+      if (configBanner.counter < 0) {
+        configBanner.counter = configBanner.counterMax;
+      }
+      updateCurrentBanner(bannerDom);
     };
-    const handleRight = (e) => {
+    const nextBanner = (e) => {
       e.preventDefault();
-      console.log("siguiente");
+      configBanner.counter++;
+      if (configBanner.counter > configBanner.counterMax) {
+        configBanner.counter = 0;
+      }
+      updateCurrentBanner(bannerDom);
     };
 
     const buttons = bannerDom.querySelectorAll("button");
     // agrega funcion a los botones
     buttons.forEach((e) => {
       if (e.getAttribute("name") === "left")
-        e.addEventListener("click", (el) => handleLeft(el));
+        e.addEventListener("click", (el) => previusBanner(el));
 
       if (e.getAttribute("name") === "right")
-        e.addEventListener("click", (el) => handleRight(el));
+        e.addEventListener("click", (el) => nextBanner(el));
     });
-    // setInterval(()=>{
-    //   if (configBanner.counter < configBanner.counterMax) {
-    //     configBanner.counter++
-    //   }else{
-    //     configBanner.counter = 0
-    //   }
-    //   console.log(configBanner.counter)
-    // }, 3000)
+    setInterval(() => {
+      configBanner.counter++;
+      if (configBanner.counter > configBanner.counterMax) {
+        configBanner.counter = 0;
+      }
+      updateCurrentBanner(bannerDom);
+    }, 3000);
   }
 };
 
@@ -208,19 +231,89 @@ const loadNews = async () => {
       <article class="loop-post">
         <img src="${featured_media_img}" alt="${title}">
         <h2>${title}</h2>
-        <p>${content}</p>
         <a href="./noticia.html?id=${id}">Ver más</a>
       </article>
       `;
     });
   }
+};
 
-  console.log(result);
+const loadLinkThree = () => {
+  const contentDom = `ACCESOS RÁPIDOS
+  SIU Guaraní
+  Campus Virtual
+  Plan Estratégico 2017-2054
+  Digesto Online
+  Correo Institucional
+  Biblioteca Digital
+  Área Educación A Distancia
+  Conocé la Facultad
+  Concursos Docentes`;
+
+  const linkThreeDom = document.getElementById("link-tree");
+  if (linkThreeDom) linkThreeDom.innerHTML = contentDom;
 };
 
 export const loadBannerAndNews = async () => {
   await loadBanner();
+  loadLinkThree();
   await loadNews();
 };
 
-loadBannerAndNews();
+// SIngle
+
+const getPostUNER = async (fetchURL) => {
+  let completePosts = {};
+
+  await fetch(fetchURL)
+    .then((res) => res.json())
+    .then(({ date, content, featured_media, id, title }) => {
+      completePosts = {
+        date,
+        content: content.rendered,
+        featured_media,
+        id,
+        title: title.rendered,
+      };
+    })
+    .catch((err) => console.log(err));
+
+  if (Object.entries(completePosts).length > 0) {
+    const imageIds = completePosts.featured_media;
+
+    await fetch(URL_FCAD_IMAGES(imageIds))
+      .then((res) => res.json())
+      .then((data) => {
+        completePosts.featured_media_img = data[0].guid?.rendered;
+        return completePosts;
+      })
+      .catch((err) => console.log(err));
+  }
+  return completePosts;
+};
+const getTemplatePost = async (id) => {
+  const post = await getPostUNER(URL_FCAD_SINGLE(id));
+  console.log(post);
+  return `<section class="single-news">
+  <h1>${post.title}</h1>
+  <hr />
+   <img src="${post.featured_media_img}" alt=""> <br>
+   <br>
+  ${post.content}</section>`;
+};
+export const loadSingleNews = async () => {
+  const domPost = document.getElementById("main-post");
+
+  // Obtenemos el id del post que viene como parametro
+  const params = window.location.search;
+  const stringNumber = params.replace("?id=", "");
+  const postId = parseInt(stringNumber);
+
+  if (domPost) {
+    if (postId) {
+      domPost.innerHTML = await getTemplatePost(postId);
+    } else {
+      domPost.innerHTML = `<h1>Error</h1> <hr /> Post no encontrado`;
+    }
+  }
+};

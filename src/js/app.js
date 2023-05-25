@@ -1,5 +1,5 @@
 // Loaders
-import { loadContact, loadCarreras, loadFooter } from './components.js';
+import { loadContact, loadCarreras, loadFooter, loadBannerAndNews, loadSingleNews } from './components.js';
 
 import { showHeaderMenu } from './routes.js'
 showHeaderMenu()
@@ -8,3 +8,8 @@ showHeaderMenu()
 loadFooter();
 loadCarreras();
 loadContact();
+
+loadBannerAndNews();
+
+
+loadSingleNews();

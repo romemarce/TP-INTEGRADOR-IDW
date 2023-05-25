@@ -9,3 +9,8 @@ export const URL_FCAD_PORTAL = (expludeIds = [], count = 3)=>{
 export const URL_FCAD_IMAGES = (includeIds = []) =>{
     return `https://www.fcad.uner.edu.ar/wp-json/wp/v2/media?include=${includeIds}`
 }
+
+export const URL_FCAD_SINGLE = (postId) =>{
+    return `https://www.fcad.uner.edu.ar/wp-json/wp/v2/posts/${postId}`
+
+}

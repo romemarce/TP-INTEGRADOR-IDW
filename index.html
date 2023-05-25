@@ -1,110 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <title>UNER - Portada</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./src/css/main.css" />
-  <title>UNER - Portada</title>
-</head>
+  <body>
+    <header class="header">
+      <section class="container-columns">
+        <img class="img-princ" src="./src/img/logo-fcad.png" alt="FCAD" />
+        <nav id="menu-list"></nav>
+      </section>
+    </header>
 
-<body>
-  <header class="header">
-    <section class="container-columns">
-      <img class="img-princ" src="./src/img/logo-fcad.png" alt="FCAD" />
-      <nav id="menu-list"></nav>
-    </section>
-  </header>
+    <main class="container-columns">
+      <section class="portada" id="portada-banner">
+        <picture>
+          <img class="fcad" src="/src/img/loading.gif" alt="uner" />
+        </picture>
+        <div class="columns-2 column-between">
+          <button name="left" class="btn_left"></button>
+          <button name="right" class="btn_right"></button>
+        </div>
+      </section>
 
-  <main class="container-columns">
-    <section class="portada" id="portada-banner">
-      <picture>
-        <img class="fcad" src="/src/img/uner-fcad-header.jpg" alt="uner">
-      </picture>
-      <div class="columns-2 column-between">
-        <button name="left" class="btn_left"></button>
-        <button name="right" class="btn_right"></button>
-      </div>
-    </section>
+      <section class="link-tree" id="link-tree"></section>
 
-    <section class="link-tree">
-      ACCESOS RÁPIDOS
-      SIU Guaraní
-      Campus Virtual
-      Plan Estratégico 2017-2054
-      Digesto Online
-      Correo Institucional
-      Biblioteca Digital
-      Área Educación A Distancia
-      Conocé la Facultad
-      Concursos Docentes
-    </section>
-
-    <section class="columns-4 gap-20 mt-3 mb-3" id="portal-news">
-      <!-- <article class="loop-post">
-        <img src="/src/img/beca.jpg" alt="beca">
-        <h2>Convocatoria Beca de Iniciación a la Investigación por el Proyecto PID 7070
-        </h2>
-        <p>Se encuentra abierta la convocatoria para postular a la Beca de Iniciación a la Investigación por el Proyecto
-          PID 7070 [...]</p>
-        <a href="#">Ver más</a>
-      </article>
-      <article class="loop-post">
-        <img src="/src/img/extencion.jpg" alt="extencion">
-        <h2>Acciones de Extensión Universitaria con perspectiva de Derechos Humanos 2023</h2>
-        <p>Se encuentra abierta la Convocatoria a Acciones de Extensión Universitaria con perspectiva de Derechos
-          Humanos, en el marco de la Ordenanza 447 [...]</p>
-        <a href="#">Ver más</a>
-      </article>
-      <article class="loop-post">
-        <img src="/src/img/becas-IV-nivel-800x450.jpg" alt="beca de cuarto">
-        <h2>Primera Convocatoria 2023 para Becas de Cuarto Nivel</h2>
-        <p>Se encuentra abierta la primera convocatoria 2023 para Becas de Cuarto Nivel destinadas al cursado de
-          carreras de postgrado [...]</p>
-        <a href="#">Ver más</a>
-      </article> -->
-    </section>
-  </main>
-
-  <!-- <script>
-      // idea
-
-      const BASE_URL = "https://www.fcad.uner.edu.ar/wp-json/wp/v2"
-
-      // https://developer.wordpress.org/rest-api/reference/posts/#list-posts
-
-      // https://www.fcad.uner.edu.ar/wp-json/wp/v2/posts
-      const getURLPosts =  `${BASE_URL}/posts/?per_page=6`
-      // https://www.fcad.uner.edu.ar/wp-json/wp/v2/posts/30901
-      const getURLPost = ( postId ) => `${BASE_URL}/posts/${postId}`
-
-      // let idsWithCome = ""
-      // let result =  await fetch() // [ {featured_media: "id" } ]
-      // res => res.json
-
-      // result.forEach(element => {
-      //   idsWithCome += element.featured_media + ","
-      // });
-      
-      // idsWithCome = idsWithCome.substring(0, idsWithCome.length - 1)
-
-      // await fetch(getURLMedias( idsWithCome ))
-
-      // https://developer.wordpress.org/rest-api/reference/media/#list-media
-
-      // Trae una sola imagen
-      // Dentro del objeto post viene "featured_media": 30904,
-      // https://www.fcad.uner.edu.ar/wp-json/wp/v2/media/30904
-      const getURLMedia = ( postId ) => `${BASE_URL}/media/${postId}`
-      
-      // Muchas imagenes segun id media/?include=30904,30897,30868
-      // const idsWithCome = 30904,30897,30868
-      const getURLMedias = ( idsWithCome = "" ) => `${BASE_URL}/media/?include=${idsWithCome}`
-    </script> -->
-
-  <footer class="footer" id="footer"></footer>
-  <script src="./src/js/app.js" type="module"></script>
-</body>
-
+      <section class="columns-4 gap-20 mt-3 mb-3" id="portal-news"></section>
+    </main>
+    <footer class="footer" id="footer"></footer>
+    <script src="./src/js/app.js" type="module"></script>
+  </body>
 </html>

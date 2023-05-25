@@ -5,10 +5,6 @@ Descripcion del sitio....
 
 La base de datos del sitio esta almacenada, gestionada y controlada por el `LocalStorage`
 
-# Changelog
-
-10/4/2023: Creacion de Git
-
 # Demo
 Puede ver la demo en: [GESTION ADMINISTRATIVA UNER](https://fcad-gestion.onrender.com/)
 

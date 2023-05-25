@@ -17,32 +17,8 @@
     </section>
   </header>
 
-  <main class="container-columns" id="main-post">
-    <h1>Error</h1>
-    <hr />
-    Post no encontrado
-  </main>
-  <script>
-    const domPost = document.getElementById('main-post');
+  <main class="container-columns" id="main-post"></main>
 
-    // Obtenemos el id del post que viene como parametro
-    const params = window.location.search
-    const stringNumber = params.replace('?id=', '')
-    const postId = parseInt(stringNumber)
-
-    if (postId) {
-      console.log(postId);
-      domPost.innerHTML = `
-        
-        <h1>Titulo</h1>
-      <hr />
-           <img src="https://via.placeholder.com/150x150" alt=""> <br>
-           <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-        
-        `
-    }
-  </script>
   <footer class="footer" id="footer"></footer>
   <script src="./src/js/app.js" type="module"></script>
 </body>
