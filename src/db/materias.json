@@ -1,0 +1,10 @@
+[
+  {"name":"Introducción al Turismo","hours":"84","isQuarterly":true,"quarterly":"1","id":0},
+  {"name":"Introducción a la Economía","hours":"56","isQuarterly":true,"quarterly":"1","id":1},
+  {"name":"Ceremonial y Protocolo","hours":"42","isQuarterly":true,"quarterly":"1","id":2},
+  {"name":"Geografia Turistica 1","hours":"84","isQuarterly":true,"quarterly":"1","id":3},
+  {"name":"Historia Regional","hours":"84","isQuarterly":true,"quarterly":"1","id":4},
+  {"name":"Derecho Civil y Comercial","hours":"56","isQuarterly":true,"quarterly":"1","id":5},
+  {"name":"Ecologia y Medio Ambiente","hours":"42","isQuarterly":true,"quarterly":"1","id":6},
+  {"name":"Administración General","hours":"84","isQuarterly":true,"quarterly":"1","id":7}
+]
