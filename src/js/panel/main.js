@@ -3,6 +3,7 @@ import { showHeaderPanel } from "./routes.js";
 import { getCurrentDay, loadProfile } from "./components.js";
 import { loadMateriaFormFunction, loadMaterias } from "./models/materias.js";
 import { importExampleMaterias } from "./imports/index.js";
+import { loadCarreraFormFunction } from "./models/carreras.js";
 
 loadProfile();
 showHeaderPanel();
@@ -26,3 +27,7 @@ if (materiaForm) loadMateriaFormFunction(materiaForm);
 
 const materiaResult = document.getElementById('materia-result');
 if (materiaResult) loadMaterias(materiaResult);
+
+
+
+loadCarreraFormFunction();

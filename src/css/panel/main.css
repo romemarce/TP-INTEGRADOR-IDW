@@ -133,3 +133,11 @@
 .checkButton input[type="radio"] {
   margin-bottom: 0px;
 }
+
+
+.add-element{
+  background-image: url("./../../img/plus.png");
+  background-size: contain;
+  background-position:center;
+  background-repeat: no-repeat;
+}
