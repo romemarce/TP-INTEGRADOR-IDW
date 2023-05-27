@@ -52,6 +52,7 @@ hr {
 .elementor-button{
   display: flex;
   justify-content: center;
+  color:black;
 }
 .elementor-container{
   border: 2px solid #4c68af; 
@@ -61,7 +62,10 @@ hr {
 .elementor-container:hover{
   transition-duration: 0.4s;
   background-color: #4c68af;
-  color: white;
+  color:black;
+}
+.elementor-lineal{
+  text-decoration: none;
 }
 @media screen and (max-width: 42em) {
   .columns-3 {
