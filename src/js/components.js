@@ -238,22 +238,91 @@ const loadNews = async () => {
   }
 };
 
-// const loadLinkThree = () => {
-//   const contentDom=``;
+const loadLinkThree = () => {
+  const contentDom=`<section class="container-columnselec ">         
+  <div class="columns-4 column-center">
+    <article>
+      <div class="elementor-container">
+        <a href="https://g3autogestion.uner.edu.ar/g3w3/acceso" class="elementor-lineal">
+          <span class="elementor-button" style="padding: 10px 100px;">
+            SIU Guaraní
+          </span>
+        </a>
+      </div>
+    </article>
+    <article>
+      <div class="elementor-container">
+        <a href="https://www.fcad.uner.edu.ar/institucional/plan-estrategico-2017-2054/" class="elementor-lineal">
+          <span class="elementor-button " style="padding: 10px 45px;">
+            Plan Estratégico 2017-2054
+          </span>
+        </a>
+      </div>
+    </article>
+    <article>
+      <div class="elementor-container">
+        <a href="https://www.fcad.uner.edu.ar/biblioteca/" class="elementor-lineal">
+          <span class="elementor-button" style="padding: 10px 90px;">
+            Biblioteca Digital
+          </span>
+        </a>
+      </div>
+    </article>
+    <article>
+      <div class="elementor-container">
+        <a href="https://www.fcad.uner.edu.ar/tour-virtual-360/" class="elementor-lineal">
+          <span class="elementor-button" style="padding: 10px 90px;">
+            Conocé la Facultad
+          </span>
+        </a>
+      </div>
+    </article>
+  </div>
 
-//   // const contentDom = `ACCESOS RÁPIDOS
-//   // SIU Guaraní
-//   // Campus Virtual
-//   // Plan Estratégico 2017-2054
-//   // Digesto Online
-//   // Biblioteca Digital
-//   // Área Educación A Distancia
-//   // Conocé la Facultad
-//   // Concursos Docentes`;
-
-//   const linkThreeDom = document.getElementById("link-tree");
-//   if (linkThreeDom) linkThreeDom.innerHTML = contentDom;
-// };
+  <section class="container-columnselec ">
+    <div class="columns-4 column-center">
+      <article>
+        <div class="elementor-container">
+          <a href="https://campus.uner.edu.ar/fcad/course/index.php" class="elementor-lineal">
+            <span class="elementor-button" style="padding: 10px 85px;">
+              Campus Virtual
+            </span>
+          </a>
+        </div>
+      </article>
+      <article>
+        <div class="elementor-container">
+          <a href="https://digesto.uner.edu.ar/" class="elementor-lineal">
+            <span class="elementor-button" style="padding: 10px 100px;">
+              Digesto Online
+            </span>
+          </a>
+        </div>
+      </article>
+      <article>
+        <div class="elementor-container">
+          <a href="https://www.fcad.uner.edu.ar/area-educacion-a-distancia/" class="elementor-lineal">
+            <span class="elementor-button" style="padding: 10px 45px;">
+              Área Educación A Distancia
+            </span>
+          </a>
+        </div>
+      </article>
+      <article>
+        <div class="elementor-container">
+          <a href="https://www.fcad.uner.edu.ar/concursos-docentes/" class="elementor-lineal">
+            <span class="elementor-button" style="padding: 10px 85px;">
+              Concursos Docentes
+            </span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+</section>`;
+  const linkThreeDom = document.getElementById("link-tree");
+  if (linkThreeDom) linkThreeDom.innerHTML = contentDom;
+};
 
 export const loadBannerAndNews = async () => {
   await loadBanner();
