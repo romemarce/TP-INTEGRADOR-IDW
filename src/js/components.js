@@ -238,21 +238,22 @@ const loadNews = async () => {
   }
 };
 
-const loadLinkThree = () => {
-  const contentDom = `ACCESOS RÁPIDOS
-  SIU Guaraní
-  Campus Virtual
-  Plan Estratégico 2017-2054
-  Digesto Online
-  Correo Institucional
-  Biblioteca Digital
-  Área Educación A Distancia
-  Conocé la Facultad
-  Concursos Docentes`;
+// const loadLinkThree = () => {
+//   const contentDom=``;
 
-  const linkThreeDom = document.getElementById("link-tree");
-  if (linkThreeDom) linkThreeDom.innerHTML = contentDom;
-};
+//   // const contentDom = `ACCESOS RÁPIDOS
+//   // SIU Guaraní
+//   // Campus Virtual
+//   // Plan Estratégico 2017-2054
+//   // Digesto Online
+//   // Biblioteca Digital
+//   // Área Educación A Distancia
+//   // Conocé la Facultad
+//   // Concursos Docentes`;
+
+//   const linkThreeDom = document.getElementById("link-tree");
+//   if (linkThreeDom) linkThreeDom.innerHTML = contentDom;
+// };
 
 export const loadBannerAndNews = async () => {
   await loadBanner();

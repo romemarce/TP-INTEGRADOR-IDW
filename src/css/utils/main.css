@@ -41,6 +41,14 @@ hr {
 .column-between{
   justify-content: space-between;
 }
+/* =========== COLUMNAS DE SELECCION ====== */
+/* Sistema de columnas */
+.container-columnselec {
+  padding: 20px 0;
+  margin: 0 auto;
+  max-width: 100%;
+  border: 1px solid #000;
+}
 @media screen and (max-width: 42em) {
   .columns-3 {
     grid-template-columns: repeat(1, 1fr);
