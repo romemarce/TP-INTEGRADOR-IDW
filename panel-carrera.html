@@ -27,83 +27,67 @@
         <section class="panel-board mt-3 mb-3">
           <!-- Formulario de carga -->
           <section class="form">
-            <form id="add-entity" name="carrera">
+            <form id="add-entity" name="carrera" class=" mb-3">
               <h2>Crear nuevo</h2>
-              <section class="columns-2 gap-10">
-                <div class="columns-2 gap-20">
-                  <input type="text" name="name" placeholder="Nombre" />
-                  <select name="type">
-                    <option value="grado">Grado</option>
-                    <option value="pregrado">Pregrado</option>
-                    <option value="posgrado">Posgrado</option>
-                  </select>
-                  <input type="number" name="year" placeholder="Duracion" />
-                  <select name="model" aria-placeholder="Modalidad">
-                    <option value="presencial">Presencial</option>
-                    <option value="remoto">Remoto</option>
-                  </select>
-                </div>
-               <section>
-                <div class="select-materia">
-                  <select name="materias">
-                    <option value="name">Materia 1</option>
-                    <option value="name">Materia 2</option>
-                    <option value="name">Materia 3</option>
-                  </select>
-                  <button id="add-materia">
-                    <img src="./src/img/plus.png" alt="add-materia">
-                  </button>
-                </div>
-                <section class="table-list">
-                  <!-- <h2 class="table-list-title">Materias</h2> -->
-                  <article class="table-list-item">
-                    <span>0</span>
-                    <span>Materia 1</span>
-                    <button type="delete">Quitar</button>
-                  </article>
-                  <article class="table-list-item">
-                    <span>1</span>
-                    <span>Materia 2</span>
-                    <button type="delete">Quitar</button>
-                  </article>
-                  <article class="table-list-item">
-                    <span>2</span>
-                    <span>Materia 3</span>
-                    <button type="delete">Quitar</button>
-                  </article>
-                </section>
-               </section>
-              </section>
-              <div class="form-buttons">
-                <button type="reset">Limpiar</button>
-                <button type="submit">Crear</button>
+              <div class="columns-4 gap-10">
+                <input type="text" name="name" placeholder="Nombre" />
+                <input type="number" name="year" placeholder="Duracion" />
+                <select name="type">
+                  <option value="grado">Grado</option>
+                  <option value="pregrado">Pregrado</option>
+                  <option value="pregradotermino">Pregrado a Termino</option>
+                  <option value="posgrado">Posgrado</option>
+                </select>
+                <select name="model" aria-placeholder="Modalidad">
+                  <option value="presencial">Presencial</option>
+                  <option value="remoto">Remoto</option>
+                </select>
               </div>
-            </form>
+
+              <section class="select-materia" id="section-materia">
+                <select name="materias"></select>
+                <button class="add-element"></button>
+              </section>
+
+              <section class="table-list">
+                <!-- <h2 class="table-list-title">Materias</h2> -->
+                <article class="table-list-item">
+                  <span>0</span>
+                  <span>Materia 1</span>
+                  <button type="delete">Quitar</button>
+                </article>
+              </section>
           </section>
-          <!-- Listado de elementos -->
-          <section class="table-list mt-3">
-            <h2 class="table-list-title">Estudiantes</h2>
-            <article class="table-list-item">
-              <span>0</span>
-              <span>Hernan Coronel</span>
-              <button type="edit">Editar</button>
-              <button type="delete">Eliminar</button>
-            </article>
-            <article class="table-list-item">
-              <span>1</span>
-              <span>Pablo Lescano</span>
-              <button type="edit">Editar</button>
-              <button type="delete">Eliminar</button>
-            </article>
-            <article class="table-list-item">
-              <span>2</span>
-              <span>Pocho La Pantera</span>
-              <button type="edit">Editar</button>
-              <button type="delete">Eliminar</button>
-            </article>
-          </section>
+          <div class="form-buttons">
+            <button type="reset">Limpiar</button>
+            <button type="submit">Crear</button>
+          </div>
+          </form>
+        </section>
+        <!-- Listado de elementos -->
+        <section class="table-list mt-3">
+          <h2 class="table-list-title">Estudiantes</h2>
+          <article class="table-list-item">
+            <span>0</span>
+            <span>Hernan Coronel</span>
+            <button type="edit">Editar</button>
+            <button type="delete">Eliminar</button>
+          </article>
+          <article class="table-list-item">
+            <span>1</span>
+            <span>Pablo Lescano</span>
+            <button type="edit">Editar</button>
+            <button type="delete">Eliminar</button>
+          </article>
+          <article class="table-list-item">
+            <span>2</span>
+            <span>Pocho La Pantera</span>
+            <button type="edit">Editar</button>
+            <button type="delete">Eliminar</button>
+          </article>
         </section>
       </section>
+    </section>
     </section>
   </main>
   <script src="./src/js/panel/main.js" type="module"></script>

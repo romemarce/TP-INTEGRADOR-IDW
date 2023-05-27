@@ -98,11 +98,10 @@ hr {
 }
 .form form select,
 .form form input {
-  display: block;
   margin-bottom: 10px;
   border: 1px solid #cecece;
   padding: 3px 5px;
-  width: 100%;
+  width: auto;
 }
 .form .select-materia{
   display: grid;
@@ -134,9 +133,6 @@ hr {
   width: 100%;
   margin: 10px auto;
 }
-/* .form-buttons button{
-  width: 70px;
-} */
 .form h2 {
   font-size: 20px;
   text-align: center;
