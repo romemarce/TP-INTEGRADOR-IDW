@@ -3,7 +3,7 @@ import { showHeaderPanel } from "./routes.js";
 import { getCurrentDay, loadProfile } from "./components.js";
 import { loadMateriaFormFunction, loadMaterias } from "./models/materias.js";
 import { importExampleMaterias } from "./imports/index.js";
-import { loadCarreraFormFunction } from "./models/carreras.js";
+import { loadCarreraFormFunction, loadCarrerasResult } from "./models/carreras.js";
 
 loadProfile();
 showHeaderPanel();
@@ -19,6 +19,7 @@ const addExampleMaterias = document.getElementById('add-example-materias');
 if (addExampleMaterias) addExampleMaterias.addEventListener("click", (e) => {
   e.preventDefault();
   importExampleMaterias()
+  window.location.reload();
 })
 
 
@@ -31,3 +32,6 @@ if (materiaResult) loadMaterias(materiaResult);
 
 
 loadCarreraFormFunction();
+
+const carreraResult = document.getElementById('carrera-result');
+if (carreraResult) loadCarrerasResult(carreraResult);

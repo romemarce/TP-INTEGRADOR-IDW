@@ -27,9 +27,9 @@
         <section class="panel-board mt-3 mb-3">
           <!-- Formulario de carga -->
           <section class="form">
-            <form id="add-entity" name="carrera" class=" mb-3">
+            <form id="carrera-form" class=" mb-3">
               <h2>Crear nuevo</h2>
-              <div class="columns-4 gap-10">
+              <div class="columns-4 gap-10" id="inputs">
                 <input type="text" name="name" placeholder="Nombre" />
                 <input type="number" name="year" placeholder="Duracion" />
                 <select name="type">
@@ -59,22 +59,10 @@
         </section>
         <!-- Listado de elementos -->
         <section class="table-list mt-3">
-          <h2 class="table-list-title">Estudiantes</h2>
-          <article class="table-list-item">
+          <h2 class="table-list-title">Carreras</h2>
+          <article class="table-list-item" id="carrera-result">
             <span>0</span>
             <span>Hernan Coronel</span>
-            <button type="edit">Editar</button>
-            <button type="delete">Eliminar</button>
-          </article>
-          <article class="table-list-item">
-            <span>1</span>
-            <span>Pablo Lescano</span>
-            <button type="edit">Editar</button>
-            <button type="delete">Eliminar</button>
-          </article>
-          <article class="table-list-item">
-            <span>2</span>
-            <span>Pocho La Pantera</span>
             <button type="edit">Editar</button>
             <button type="delete">Eliminar</button>
           </article>

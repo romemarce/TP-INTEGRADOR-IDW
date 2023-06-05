@@ -238,90 +238,57 @@ const loadNews = async () => {
   }
 };
 
-const loadLinkThree = () => {
-  const contentDom=`<section class="container-columnselec ">         
-  <div class="columns-4 column-center">
-    <article>
-      <div class="elementor-container">
-        <a href="https://g3autogestion.uner.edu.ar/g3w3/acceso" class="elementor-lineal">
-          <span class="elementor-button" style="padding: 10px 100px;">
-            SIU Guaraní
-          </span>
-        </a>
-      </div>
-    </article>
-    <article>
-      <div class="elementor-container">
-        <a href="https://www.fcad.uner.edu.ar/institucional/plan-estrategico-2017-2054/" class="elementor-lineal">
-          <span class="elementor-button " style="padding: 10px 45px;">
-            Plan Estratégico 2017-2054
-          </span>
-        </a>
-      </div>
-    </article>
-    <article>
-      <div class="elementor-container">
-        <a href="https://www.fcad.uner.edu.ar/biblioteca/" class="elementor-lineal">
-          <span class="elementor-button" style="padding: 10px 90px;">
-            Biblioteca Digital
-          </span>
-        </a>
-      </div>
-    </article>
-    <article>
-      <div class="elementor-container">
-        <a href="https://www.fcad.uner.edu.ar/tour-virtual-360/" class="elementor-lineal">
-          <span class="elementor-button" style="padding: 10px 90px;">
-            Conocé la Facultad
-          </span>
-        </a>
-      </div>
-    </article>
-  </div>
+export const loadLinkThree = (parentDom) => {
+  const linkThree = [
+    {
+      name: "Plan Estratégico 2017-2054",
+      url: "https://www.fcad.uner.edu.ar/institucional/plan-estrategico-2017-2054/",
+    },
+    {
+      name: "Biblioteca Digital",
+      url: "https://www.fcad.uner.edu.ar/biblioteca/",
+    },
+    {
+      name: "Conocé la Facultad",
+      url: "https://www.fcad.uner.edu.ar/tour-virtual-360/",
+    },
+    {
+      name: "Campus Virtual",
+      url: "https://campus.uner.edu.ar/fcad/course/index.php",
+    },
+    { 
+      name: "Digesto Online",
+      url: "https://digesto.uner.edu.ar/",
+    },
+    { 
+      name: "Biblioteca Digital",
+      url: "https://www.fcad.uner.edu.ar/biblioteca/",
+    },
+    {
+      name: "Área Educación A Distancia",
+      url: "https://www.fcad.uner.edu.ar/area-educacion-a-distancia/",
+    },
+    {
+      name: "Concursos Docentes",
+      url: "https://www.fcad.uner.edu.ar/concursos-docentes/",
+    }
+  ];
+  const section = document.createElement("section")
+  section.classList.add("container-columnselec");
+  const column = document.createElement("div");
+  column.classList.add("columns-4", "gap-20", "column-center");
 
-  <section class="container-columnselec ">
-    <div class="columns-4 column-center">
-      <article>
-        <div class="elementor-container">
-          <a href="https://campus.uner.edu.ar/fcad/course/index.php" class="elementor-lineal">
-            <span class="elementor-button" style="padding: 10px 85px;">
-              Campus Virtual
-            </span>
-          </a>
-        </div>
-      </article>
-      <article>
-        <div class="elementor-container">
-          <a href="https://digesto.uner.edu.ar/" class="elementor-lineal">
-            <span class="elementor-button" style="padding: 10px 100px;">
-              Digesto Online
-            </span>
-          </a>
-        </div>
-      </article>
-      <article>
-        <div class="elementor-container">
-          <a href="https://www.fcad.uner.edu.ar/area-educacion-a-distancia/" class="elementor-lineal">
-            <span class="elementor-button" style="padding: 10px 45px;">
-              Área Educación A Distancia
-            </span>
-          </a>
-        </div>
-      </article>
-      <article>
-        <div class="elementor-container">
-          <a href="https://www.fcad.uner.edu.ar/concursos-docentes/" class="elementor-lineal">
-            <span class="elementor-button" style="padding: 10px 85px;">
-              Concursos Docentes
-            </span>
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
-</section>`;
+  let allLinksDom = "";
+
+  linkThree.forEach(({name, url}) => {
+    allLinksDom += `<a href="${url}" target="_blank" class="elementor-container">${name}</a>`;
+  });
+  
+  column.innerHTML = allLinksDom;
+
+  section.append(column);
   const linkThreeDom = document.getElementById("link-tree");
-  if (linkThreeDom) linkThreeDom.innerHTML = contentDom;
+  if (linkThreeDom) linkThreeDom.append(section)
 };
 
 export const loadBannerAndNews = async () => {

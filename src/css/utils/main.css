@@ -48,22 +48,22 @@ hr {
   margin: 0 auto;
   max-width: 100%;
 }
-.elementor-button{
-  display: flex;
-  justify-content: center;
-  color:black;
-}
 .elementor-container{
-  border: 2px solid #4c68af; 
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color:var(--bg-principal);
+  border: 2px solid #4c68af;
+  width: 100%;
+  height: 70px;
   font-size: 20px;
+  font-weight: bold;
 }
 .elementor-container:hover{
-  transition-duration: 0.4s;
+  transition: all 0.5s ease-in-out;
   background-color: #4c68af;
-  color:black;
-}
-.elementor-lineal{
-  text-decoration: none;
+  color: #f9ffff;
 }
 @media screen and (max-width: 42em) {
   .columns-3 {

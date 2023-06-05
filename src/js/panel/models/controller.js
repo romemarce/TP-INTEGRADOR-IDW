@@ -6,7 +6,7 @@ import { getDatabase, setDatabase } from "../database.js";
 export const collections = {
     estudiante: "estudiantes",
     materia: "materias",
-    carrera: "carrears"
+    carrera: "carreras"
 }
 
 

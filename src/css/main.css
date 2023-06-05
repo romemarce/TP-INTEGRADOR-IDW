@@ -425,6 +425,9 @@ html {
   right: 0;
 }
 
+.single-news iframe{
+  width: 100%;
+}
 .single-news img{
   max-width: 100%;
 }
