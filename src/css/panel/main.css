@@ -1,15 +1,16 @@
 @import url("./../utils/main.css");
 @import url("./responsive.css");
 
-.main-panel {
-  padding: 10px;
-  background: rgb(174, 238, 219);
+.html-panel{
+   background: rgb(174, 238, 219);
   background: radial-gradient(
     circle,
     rgba(174, 238, 219, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
-  height: 100%;
+}
+.main-panel {
+  padding: 10px;
 }
 .content-panel {
   display: grid;

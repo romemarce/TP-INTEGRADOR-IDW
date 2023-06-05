@@ -1,5 +1,5 @@
 import { getDatabase, setDatabase } from "../database.js";
-import { addNewElement, collections, getElements, removeElement } from "./controller.js";
+import { addNewElement, collections, getElements, reloadPage, removeElement, searchElement } from "./controller.js";
 
 // Incompleto
 const sectionMateria = document.getElementById("section-materia");
@@ -12,6 +12,12 @@ const currentMaterias = {
 };
 
 if (db?.materias) currentMaterias.optionList = db?.materias || [];
+// if (db?.carreras) {
+//   const carreras = db?.carreras || []
+//   const result = carreras.filter(e => !currentMaterias.optionList.includes(e.materias))
+
+//   console.log(result);
+// }
 
 const updateMateriaList = () => {
   const listDom = document.getElementById("selected-list");
@@ -120,7 +126,14 @@ export const loadCarreraFormFunction = () => {
       currentMaterias.selected.forEach(e => materias.push(parseInt(e.id)));
       newCarrera = {...newCarrera, materias}
 
-      addNewElement(newCarrera, collections.carrera)
+      // chequear si existe
+      if (searchElement(collections.carrera, "name", newCarrera)) {
+        console.log("la carrera ya existe");
+      }else{
+        // agregar item
+        addNewElement(newCarrera, collections.carrera)
+        reloadPage();
+      }
     });
 };
 

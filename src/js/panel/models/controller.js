@@ -54,6 +54,21 @@ export const getElements = (collection) => {
 }
 
 /**
+ * Busca un elemento
+ * @param {collection} coleccion actual.
+ * @param {searchBy} elemento de busqueda.
+ * @param {element} elemento a comparar.
+ * @return boolean
+ */
+export const searchElement = (collection, searchBy = "id", element) =>{
+    const db = getDatabase();
+
+    const result = db[collection].filter(e => e[searchBy] === element[searchBy])
+    if (result.length > 0) return true
+    return false
+}
+
+/**
  * Actualiza los elementos de una coleccion.
  * @param {element} elemento actualizado.
  * @param {collection} coleccion actual.
@@ -70,4 +85,10 @@ export const updateElement = (element, collection) =>{
         db[collection] = list
         setDatabase(db);
     }
+}
+/**
+ * Recarga la pagina
+ */
+export const reloadPage = () => {
+    window.location.reload()
 }
