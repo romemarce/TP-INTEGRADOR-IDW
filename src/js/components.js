@@ -53,13 +53,7 @@ export const loadFooter = () => {
   if (footer) {
     footer.innerHTML = `
     <section class="container-columns ">
-    <div class="columns-3">
-      <section>
-        <h3>UBICACIÓN</h3>
-        <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bO3tFLszqhcVS3B3HaQ5Gl4VDmwDUjs&ehbc=2E312F"
-          width="300px" height="200" style="border: 0;" allowfullscreen="" loading="lazy"
-           referrerpolicy="no-referrer-when-downgrade"></iframe> --!>
-      </section>
+    <div class="columns-2">
       <section>
         <h3>CONÉCTATE</h3>
         <div class="columns">
