@@ -18,4 +18,13 @@
   .post-carrera {
     width: 150px !important;
   }
+  .contact{
+    padding-inline-start: 10% !important;
+  }
+  .date{
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .table-contact{
+    width:90% !important ;
+  }
 }
