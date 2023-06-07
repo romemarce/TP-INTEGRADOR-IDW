@@ -1,4 +1,25 @@
+.btn-responsive{
+  display: none;
+}
 @media screen and (max-width: 42em) {
+  .menu-list{
+    display: none;
+  }
+  .btn-responsive{
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    background-color: transparent;
+    border: 0;
+    filter: invert(1);
+    background-image: url('./../../img/menu.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+  }
   .content-panel {
     grid-template-columns: auto !important;
   }

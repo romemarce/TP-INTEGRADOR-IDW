@@ -22,6 +22,21 @@ export const loadProfile = () => {
   }
 }
 
+export const addButtonResponsive = (button)=>{
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    const menuList = document.getElementById("menu-list");
+    if (menuList) {
+      const menu = menuList.childNodes[0]
+      if (!menu.style.display) {
+        menu.style.display = "block"
+      } else {
+        menu.style.display = ""
+      }
+    }
+  })
+
+}
 
 // export const Notification = (msg, func)=>{
 //   const body = document.getElementsByTagName('body');
