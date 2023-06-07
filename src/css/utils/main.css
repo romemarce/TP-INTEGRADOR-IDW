@@ -66,12 +66,13 @@ hr {
   color: #f9ffff;
 }
 @media screen and (max-width: 42em) {
-  .columns-3 {
+  .columns-3  {
     grid-template-columns: repeat(1, 1fr);
   }
   .columns-2{
     grid-template-columns: repeat(1, 1fr);
   }
+
 }
 
 /* =========== COMPONENTE ====== */

@@ -15,4 +15,7 @@
   .columns-2{
     grid-template-columns: repeat(1, 1fr);
   }
+  .post-carrera {
+    width: 150px !important;
+  }
 }

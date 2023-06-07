@@ -116,12 +116,12 @@
   margin-bottom: 10%;
 }
 .credit-profile .avatar {
-  width: 80px;
+  width: 130px;
   border: 3px solid #fff;
   position: absolute;
   z-index: 11;
   left: 5%;
-  top: 10%;
+  top: 5%;
   border-radius: 100%;
 }
 /* Form */
