@@ -1,6 +1,6 @@
 import { initDatabase } from "./database.js";
 import { showHeaderPanel } from "./routes.js";
-import { getCurrentDay, loadProfile } from "./components.js";
+import { getCurrentDay, loadProfile, addButtonResponsive, addPanelCounter } from "./components.js";
 import { loadMateriaFormFunction, loadMaterias } from "./models/materias.js";
 import { importExampleMaterias } from "./imports/index.js";
 import { loadCarreraFormFunction, loadCarrerasResult } from "./models/carreras.js";
@@ -35,3 +35,17 @@ loadCarreraFormFunction();
 
 const carreraResult = document.getElementById('carrera-result');
 if (carreraResult) loadCarrerasResult(carreraResult);
+
+
+
+
+
+
+
+// Responsive
+const btnResponsive = document.getElementById("btn-responsive");
+if (btnResponsive) addButtonResponsive(btnResponsive)
+
+
+const panelCounterDom = document.getElementById("panel-counter");
+if (panelCounterDom) addPanelCounter(panelCounterDom)
