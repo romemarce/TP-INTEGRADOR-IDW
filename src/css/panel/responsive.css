@@ -23,4 +23,8 @@
   .content-panel {
     grid-template-columns: auto !important;
   }
+  .credit-profile .avatar {
+    width: 80px !important;
+    top: 9% !important;
+  }
 }
