@@ -24,7 +24,7 @@ export const loadProfile = () => {
 };
 
 export const addButtonResponsive = () => {
-const button = document.getElementById("btn-responsive");
+  const button = document.getElementById("btn-responsive");
 
   button.addEventListener("click", (e) => {
     e.preventDefault();
@@ -42,32 +42,34 @@ const button = document.getElementById("btn-responsive");
 
 export const addPanelCounter = () => {
   const dom = document.getElementById("panel-counter");
-  const db = getDatabase();
-  const { estudiantes, materias, carreras } = {
-    estudiantes: db?.estudiantes.length || 0,
-    materias: db?.materias.length || 0,
-    carreras: db?.carreras.length || 0,
-  };
-  dom.innerHTML = `
-  <div class="box-counter bc-azul" >
-    <p>
-      <strong>${estudiantes}</strong>
-      Estudiantes
-    </p>
-  </div>
-  <div class="box-counter bc-celeste">
-    <p>
-      <strong>${materias}</strong>
-      Materias
-    </p>
-  </div>
-  <div class="box-counter bc-bordo">
-    <p>
-      <strong>${carreras}</strong>
-      Carreras
-    </p>
-  </div>
-  `;
+  if (dom) {
+    const db = getDatabase();
+    const { estudiantes, materias, carreras } = {
+      estudiantes: db?.estudiantes.length || 0,
+      materias: db?.materias.length || 0,
+      carreras: db?.carreras.length || 0,
+    };
+    dom.innerHTML = `
+      <div class="box-counter bc-azul" >
+        <p>
+          <strong>${estudiantes}</strong>
+          Estudiantes
+        </p>
+      </div>
+      <div class="box-counter bc-celeste">
+        <p>
+          <strong>${materias}</strong>
+          Materias
+        </p>
+      </div>
+      <div class="box-counter bc-bordo">
+        <p>
+          <strong>${carreras}</strong>
+          Carreras
+        </p>
+      </div>
+      `;
+  }
 };
 
 export const sendNotification = (msg = "") => {
@@ -93,6 +95,7 @@ export const sendNotification = (msg = "") => {
   }, 500);
 };
 
-export const reloadPage = (time =3000) => setTimeout(()=>{
-  window.location.reload()
-}, time);
+export const reloadPage = (time = 3000) =>
+  setTimeout(() => {
+    window.location.reload();
+  }, time);
