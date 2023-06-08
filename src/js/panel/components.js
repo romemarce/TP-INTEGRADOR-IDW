@@ -23,7 +23,9 @@ export const loadProfile = () => {
   }
 };
 
-export const addButtonResponsive = (button) => {
+export const addButtonResponsive = () => {
+const button = document.getElementById("btn-responsive");
+
   button.addEventListener("click", (e) => {
     e.preventDefault();
     const menuList = document.getElementById("menu-list");
@@ -38,7 +40,8 @@ export const addButtonResponsive = (button) => {
   });
 };
 
-export const addPanelCounter = (dom) => {
+export const addPanelCounter = () => {
+  const dom = document.getElementById("panel-counter");
   const db = getDatabase();
   const { estudiantes, materias, carreras } = {
     estudiantes: db?.estudiantes.length || 0,

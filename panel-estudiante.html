@@ -28,9 +28,9 @@
         <section class="panel-board mt-3 mb-3">
           <!-- Formulario de carga -->
           <section class="form">
-            <form id="add-entity" name="estudiante">
+            <form id="estudiante-form">
               <h2>Crear nuevo</h2>
-              <div class="columns-2 gap-20">
+              <div class="columns-2 gap-20" id="inputs">
                 <input type="number" name="dni" placeholder="Doc. de Identidad" />
                 <input type="text" name="lastname" placeholder="Apellido" />
                 <input type="text" name="name" placeholder="Nombre" />
@@ -38,6 +38,7 @@
                 <input type="text" name="nationality" placeholder="Nacionalidad" />
                 <input type="email" name="email" placeholder="Correo Electrónico" />
                 <input type="number" name="phone" placeholder="Celular" />
+                <select name="carrera" id="carrera-option"></select>
               </div>
               <div class="form-buttons">
                 <button type="reset">Limpiar</button>
@@ -48,24 +49,7 @@
           <!-- Listado de elementos -->
           <section class="table-list mt-3">
             <h2 class="table-list-title">Estudiantes</h2>
-            <article class="table-list-item">
-              <span>0</span>
-              <span>Hernan Coronel</span>
-              <button type="edit">Editar</button>
-              <button type="delete">Eliminar</button>
-            </article>
-            <article class="table-list-item">
-              <span>1</span>
-              <span>Pablo Lescano</span>
-              <button type="edit">Editar</button>
-              <button type="delete">Eliminar</button>
-            </article>
-            <article class="table-list-item">
-              <span>2</span>
-              <span>Pocho La Pantera</span>
-              <button type="edit">Editar</button>
-              <button type="delete">Eliminar</button>
-            </article>
+            <section id="estudiante-result"></section>
           </section>
         </section>
       </section>

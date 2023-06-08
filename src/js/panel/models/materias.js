@@ -13,7 +13,8 @@ const Materia = {
   quarterly: "", // Primer o segundo cuatrimestre
 };
 
-export const loadMateriaFormFunction = (formDom) => {
+export const loadMateriaFormFunction = () => {
+  const formDom = document.getElementById("materia-form")
   if (formDom) {
     let newMateria = Materia;
 
@@ -60,40 +61,4 @@ export const loadMateriaFormFunction = (formDom) => {
       reloadPage();
     });
   }
-};
-
-const handleDeleteItem = (e) => {
-  e.preventDefault();
-  let item = document.getElementById(e.target.parentNode.id);
-  let itemId = item.id.replace("item-list-", "");
-
-  if (confirm(`Desea eliminar el elemento ?`)) {
-    removeElement(itemId, collections.materia);
-    item.remove();
-  }
-};
-
-export const loadMaterias = (resultDom) => {
-  const materias = getElements(collections.materia);
-  // list.forEach((e = Materia)=>{
-  resultDom.innerHTML = "";
-  materias.forEach(({ id, name }) => {
-    const elementId = "item-list-" + String(id);
-
-    let article = document.createElement("article");
-    article.classList.add("table-list-item");
-    article.id = elementId;
-    article.innerHTML = `<span>${id}</span><span>${name}</span>`;
-
-    let buttonDelete = document.createElement("button");
-    buttonDelete.type = "delete";
-    buttonDelete.addEventListener("click", (e) => handleDeleteItem(e));
-    buttonDelete.innerHTML = "Eliminar";
-
-    // Faltaria actualizar
-
-    article.append(buttonDelete);
-
-    resultDom.append(article);
-  });
 };

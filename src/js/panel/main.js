@@ -6,12 +6,12 @@ import {
   addButtonResponsive,
   addPanelCounter,
 } from "./components.js";
-import { loadMateriaFormFunction, loadMaterias } from "./models/materias.js";
+import { loadMateriaFormFunction } from "./models/materias.js";
 import { importExampleMaterias } from "./imports/index.js";
-import {
-  loadCarreraFormFunction,
-  loadCarrerasResult,
-} from "./models/carreras.js";
+import { loadCarreraFormFunction } from "./models/carreras.js";
+import { loadEstudianteFormFunction } from "./models/estudiantes.js";
+import { loadCollectionList } from "./models/utils.js";
+import { collections } from "./models/controller.js";
 
 loadProfile();
 showHeaderPanel();
@@ -22,6 +22,12 @@ if (domPanelDate) {
   domPanelDate.innerHTML = getCurrentDay();
 }
 
+/**
+ *  ------------------
+ *     MATERIAS
+ *  ------------------
+ */
+
 const addExampleMaterias = document.getElementById("add-example-materias");
 if (addExampleMaterias)
   addExampleMaterias.addEventListener("click", (e) => {
@@ -30,20 +36,30 @@ if (addExampleMaterias)
     window.location.reload();
   });
 
-const materiaForm = document.getElementById("materia-form");
-if (materiaForm) loadMateriaFormFunction(materiaForm);
+loadMateriaFormFunction();
+loadCollectionList("materia-result", collections.materia);
 
-const materiaResult = document.getElementById("materia-result");
-if (materiaResult) loadMaterias(materiaResult);
-
+/**
+ *  ------------------
+ *     CARRERAS
+ *  ------------------
+ */
 loadCarreraFormFunction();
+loadCollectionList("carrera-result", collections.carrera);
 
-const carreraResult = document.getElementById("carrera-result");
-if (carreraResult) loadCarrerasResult(carreraResult);
+/**
+ *  ------------------
+ *     ESTUDIANTES
+ *  ------------------
+ */
 
-// Responsive
-const btnResponsive = document.getElementById("btn-responsive");
-if (btnResponsive) addButtonResponsive(btnResponsive);
+loadEstudianteFormFunction();
+loadCollectionList("estudiante-result", collections.estudiante, "dni");
 
-const panelCounterDom = document.getElementById("panel-counter");
-if (panelCounterDom) addPanelCounter(panelCounterDom);
+/**
+ *  ------------------
+ *     RESPONSIVE
+ *  ------------------
+ */
+addButtonResponsive();
+addPanelCounter();
