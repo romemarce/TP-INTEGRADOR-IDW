@@ -6,6 +6,10 @@ const routesPanel = [
     url: "./panel.html",
   },
   {
+    name: "Inscripciones",
+    url: "./panel-Inscripcion.html",
+  },
+  {
     name: "Estudiantes",
     url: "./panel-estudiante.html",
   },
