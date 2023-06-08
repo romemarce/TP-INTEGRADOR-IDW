@@ -67,7 +67,7 @@ export const addPanelCounter = (dom) => {
   `;
 };
 
-export const sendNotification = (msg = "", callBack = ()=>{}) => {
+export const sendNotification = (msg = "") => {
   const body = document.getElementsByTagName("body")[0];
 
   const article = document.createElement("article");
@@ -85,9 +85,11 @@ export const sendNotification = (msg = "", callBack = ()=>{}) => {
       progress.value += 15;
     } else {
       article.remove();
-      callBack();
       clearInterval(intervalo);
     }
   }, 500);
-
 };
+
+export const reloadPage = (time =3000) => setTimeout(()=>{
+  window.location.reload()
+}, time);

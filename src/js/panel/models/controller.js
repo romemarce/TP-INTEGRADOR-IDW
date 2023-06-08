@@ -1,3 +1,4 @@
+import { sendNotification } from "../components.js";
 import { getDatabase, setDatabase } from "../database.js";
 
 /**
@@ -29,6 +30,7 @@ export const addNewElement = (element, collection) => {
     db[collection].push({ ...element, id });
   }
   setDatabase(db);
+  sendNotification(`Elemento '${collection}' creado`)
 };
 
 /**

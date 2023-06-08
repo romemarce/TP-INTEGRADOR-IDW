@@ -142,3 +142,20 @@
   background-position:center;
   background-repeat: no-repeat;
 }
+
+
+
+.notification {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  font-family: Quicksand;
+  background-color: #fff;
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 5px #ccc;
+}
+.notification progress {
+  width: 100%;
+}

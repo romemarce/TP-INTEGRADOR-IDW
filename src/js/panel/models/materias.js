@@ -1,4 +1,10 @@
-import { addNewElement, collections, getElements, removeElement } from "./controller.js";
+import { reloadPage, sendNotification } from "../components.js";
+import {
+  addNewElement,
+  collections,
+  getElements,
+  removeElement,
+} from "./controller.js";
 
 const Materia = {
   name: "",
@@ -38,22 +44,20 @@ export const loadMateriaFormFunction = (formDom) => {
 
       inputs.forEach((el) => {
         if (el.type === "checkbox") {
-          newMateria = {...newMateria, [el.name]: (el.checked) ? true : false};
+          newMateria = { ...newMateria, [el.name]: el.checked ? true : false };
         } else if (el.type === "radio") {
           if (el.checked) newMateria = { ...newMateria, [el.name]: el.value };
         } else {
           newMateria = { ...newMateria, [el.name]: el.value };
         }
       });
-      
+
       if (!newMateria.isQuarterly)
         newMateria = { ...newMateria, quarterly: "" };
 
-      // newMateria is ready
-
       addNewElement(newMateria, collections.materia);
 
-      window.location.reload();
+      reloadPage();
     });
   }
 };
