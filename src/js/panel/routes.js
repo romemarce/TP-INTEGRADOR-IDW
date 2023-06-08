@@ -27,11 +27,13 @@ const routesPanel = [
   },
 ];
 export const showHeaderPanel = () => {
-  const ulDom = document.createElement("ul");
-  ulDom.classList.add("menu-list");
-  routesPanel.forEach((route) => {
-    ulDom.innerHTML += `<li class="menu-item ${route?.className ? route.className : ""
-      }"><a href="${route.url}">${route.name}</a></li>`;
-  });
-  menuDom.append(ulDom);
+  if (menuDom) {
+    const ulDom = document.createElement("ul");
+    ulDom.classList.add("menu-list");
+    routesPanel.forEach((route) => {
+      ulDom.innerHTML += `<li class="menu-item ${route?.className ? route.className : ""
+        }"><a href="${route.url}">${route.name}</a></li>`;
+    });
+    menuDom.append(ulDom);
+  }
 };

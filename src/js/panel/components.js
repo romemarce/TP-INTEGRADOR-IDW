@@ -8,9 +8,8 @@ export const getCurrentDay = () => {
   return `${d}/${m}/${y}`;
 };
 
-
 export const loadProfile = () => {
-  const profileDom = document.getElementById('profile')
+  const profileDom = document.getElementById("profile");
   if (profileDom) {
     profileDom.innerHTML += `
       <section class="profile">
@@ -22,39 +21,30 @@ export const loadProfile = () => {
       </section>
     `;
   }
-}
+};
 
-export const addButtonResponsive = (button)=>{
+export const addButtonResponsive = (button) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
     const menuList = document.getElementById("menu-list");
     if (menuList) {
-      const menu = menuList.childNodes[0]
+      const menu = menuList.childNodes[0];
       if (!menu.style.display) {
-        menu.style.display = "block"
+        menu.style.display = "block";
       } else {
-        menu.style.display = ""
+        menu.style.display = "";
       }
     }
-  })
+  });
+};
 
-}
-
-// export const Notification = (msg, func)=>{
-//   const body = document.getElementsByTagName('body');
-//   const modal = document.createElement("section");
-//         modal.classList.add("modal");
-
-
-// }
-
-export const addPanelCounter = (dom)=>{
+export const addPanelCounter = (dom) => {
   const db = getDatabase();
-  const {estudiantes, materias, carreras} = {
+  const { estudiantes, materias, carreras } = {
     estudiantes: db?.estudiantes.length || 0,
     materias: db?.materias.length || 0,
     carreras: db?.carreras.length || 0,
-  }
+  };
   dom.innerHTML = `
   <div class="box-counter bc-azul" >
     <p>
@@ -74,5 +64,30 @@ export const addPanelCounter = (dom)=>{
       Carreras
     </p>
   </div>
-  `
-}
+  `;
+};
+
+export const sendNotification = (msg = "", callBack = ()=>{}) => {
+  const body = document.getElementsByTagName("body")[0];
+
+  const article = document.createElement("article");
+  article.classList.add("notification");
+  article.innerHTML = `<p>${msg}</p>`;
+
+  const progress = document.createElement("progress");
+  progress.value = 1;
+  progress.max = 100;
+  article.append(progress);
+  body.append(article);
+
+  const intervalo = setInterval(() => {
+    if (progress.value < 100) {
+      progress.value += 15;
+    } else {
+      article.remove();
+      callBack();
+      clearInterval(intervalo);
+    }
+  }, 500);
+
+};
