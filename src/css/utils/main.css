@@ -25,6 +25,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .gap-10{
   gap: 10px;
 }
@@ -173,6 +174,7 @@ hr {
 
 /* BUTTONS */
 
+button[type="search"],
 button[type="submit"],
 button[type="reset"],
 button[type="edit"],
@@ -184,6 +186,7 @@ button[type="delete"]{
   width: 70px;
 }
 
+button[type="search"],
 button[type="submit"]:hover,
 button[type="reset"]:hover,
 button[type="edit"]:hover,
@@ -192,6 +195,13 @@ button[type="delete"]:hover{
   cursor: pointer;
 }
 
+/* submit */
+button[type="search"]{
+  background-color: #b7adf9;
+}
+button[type="search"]:hover{
+  background-color: #a396fa;
+}
 /* submit */
 button[type="submit"]{
   background-color: #3ec487;

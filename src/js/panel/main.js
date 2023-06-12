@@ -12,6 +12,7 @@ import { loadCarreraFormFunction } from "./models/carreras.js";
 import { loadEstudianteFormFunction } from "./models/estudiantes.js";
 import { loadCollectionList } from "./models/utils.js";
 import { collections } from "./models/controller.js";
+import { loadInscripcionFormFunction } from "./models/inscripcion.js";
 
 loadProfile();
 showHeaderPanel();
@@ -55,6 +56,15 @@ loadCollectionList("carrera-result", collections.carrera);
 
 loadEstudianteFormFunction();
 loadCollectionList("estudiante-result", collections.estudiante, "dni");
+
+/**
+ *  ------------------
+ *     INSCRIPCIONES
+ *  ------------------
+ */
+
+loadInscripcionFormFunction();
+// loadCollectionList("estudiante-result", collections.estudiante, "dni");
 
 /**
  *  ------------------
