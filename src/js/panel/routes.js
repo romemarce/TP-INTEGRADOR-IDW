@@ -7,7 +7,7 @@ const routesPanel = [
   },
   {
     name: "Inscripciones",
-    url: "./panel-Inscripcion.html",
+    url: "./panel-inscripcion.html",
   },
   {
     name: "Estudiantes",
