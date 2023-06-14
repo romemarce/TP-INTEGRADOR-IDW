@@ -1,23 +1,14 @@
-import { getDatabase, setDatabase } from "../database.js"
+import { reloadPage } from "../components.js";
+import { setDatabase } from "../database.js";
 
-const db = getDatabase();
-export const importExampleMaterias = async () => {
-  const list = await fetch('./src/db/materias.json').then(res => res.json())
-    db.materias = list
-  setDatabase(db);
-}
+const URL_ESTUDIANTE = "./src/data/estudiantes.json";
+const URL_CARRERA = "./src/data/carreras.json";
+const URL_MATERIA = "./src/data/materias.json";
 
-// export const importExampleCarreras = async () => {
-//   const list = await fetch('./src/db/carreras.json').then(res => res.json())
-//   list.forEach(e => {
-//     db.materias.push(e)
-//   });
-//   setDatabase(db);
-// }
-// export const importExampleEstudiantes = async () => {
-//   const list = await fetch('./src/db/carreras.json').then(res => res.json())
-//   list.forEach(e => {
-//     db.materias.push(e)
-//   });
-//   setDatabase(db);
-// }
+export const importJsonData = async () => {
+  const carreras = await fetch(URL_CARRERA).then((res) => res.json());
+  const estudiantes = await fetch(URL_ESTUDIANTE).then((res) => res.json());
+  const materias = await fetch(URL_MATERIA).then((res) => res.json());
+  setDatabase({ carreras, estudiantes, materias });
+  setTimeout(() => reloadPage(), 1000);
+};

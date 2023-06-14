@@ -7,12 +7,12 @@ import {
   addPanelCounter,
 } from "./components.js";
 import { loadMateriaFormFunction } from "./models/materias.js";
-import { importExampleMaterias } from "./imports/index.js";
 import { loadCarreraFormFunction } from "./models/carreras.js";
 import { loadEstudianteFormFunction } from "./models/estudiantes.js";
 import { loadCollectionList } from "./models/utils.js";
 import { collections } from "./models/controller.js";
 import { loadInscripcionFormFunction } from "./models/inscripcion.js";
+import { importJsonData } from "./imports/index.js";
 
 loadProfile();
 showHeaderPanel();
@@ -23,20 +23,18 @@ if (domPanelDate) {
   domPanelDate.innerHTML = getCurrentDay();
 }
 
+const importDatabase = document.getElementById("import-database");
+if (importDatabase)
+  importDatabase.addEventListener("click", (e) => {
+    e.preventDefault();
+    importJsonData();
+  });
+
 /**
  *  ------------------
  *     MATERIAS
  *  ------------------
  */
-
-const addExampleMaterias = document.getElementById("add-example-materias");
-if (addExampleMaterias)
-  addExampleMaterias.addEventListener("click", (e) => {
-    e.preventDefault();
-    importExampleMaterias();
-    window.location.reload();
-  });
-
 loadMateriaFormFunction();
 loadCollectionList("materia-result", collections.materia);
 

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Matemáticas",
+    "hours": 80,
+    "type": "anual"
+  },
+  {
+    "id": 2,
+    "name": "Física",
+    "hours": 60,
+    "type": "primer cuatrimestre"
+  },
+  {
+    "id": 3,
+    "name": "Química",
+    "hours": 70,
+    "type": "segundo cuatrimestre"
+  },
+  {
+    "id": 4,
+    "name": "Programación",
+    "hours": 90,
+    "type": "anual"
+  },
+  {
+    "id": 5,
+    "name": "Diseño web",
+    "hours": 70,
+    "type": "primer cuatrimestre"
+  },
+  {
+    "id": 6,
+    "name": "Gestión de proyectos",
+    "hours": 60,
+    "type": "segundo cuatrimestre"
+  },
+  {
+    "id": 7,
+    "name": "Contabilidad",
+    "hours": 80,
+    "type": "anual"
+  },
+  {
+    "id": 8,
+    "name": "Marketing",
+    "hours": 50,
+    "type": "primer cuatrimestre"
+  },
+  {
+    "id": 9,
+    "name": "Recursos humanos",
+    "hours": 60,
+    "type": "segundo cuatrimestre"
+  },
+  {
+    "id": 10,
+    "name": "Comunicación empresarial",
+    "hours": 70,
+    "type": "anual"
+  }
+]

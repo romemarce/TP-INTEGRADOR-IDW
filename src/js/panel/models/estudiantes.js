@@ -1,11 +1,9 @@
 import { sendNotification } from "../components.js";
-import { getDatabase, setDatabase } from "../database.js";
+import { getDatabase } from "../database.js";
 import {
   addNewElement,
   collections,
-  getElements,
   reloadPage,
-  removeElement,
   searchElement,
 } from "./controller.js";
 
