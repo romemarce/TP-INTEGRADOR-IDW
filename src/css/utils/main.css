@@ -73,6 +73,10 @@ hr {
   .columns-2{
     grid-template-columns: repeat(1, 1fr);
   }
+  .columns-4 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 
 }
 
