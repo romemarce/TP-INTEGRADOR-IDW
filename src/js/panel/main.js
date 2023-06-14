@@ -5,6 +5,7 @@ import {
   loadProfile,
   addButtonResponsive,
   addPanelCounter,
+  addCoffeGif,
 } from "./components.js";
 import { loadMateriaFormFunction } from "./models/materias.js";
 import { loadCarreraFormFunction } from "./models/carreras.js";
@@ -71,3 +72,8 @@ loadInscripcionFormFunction();
  */
 addButtonResponsive();
 addPanelCounter();
+
+
+
+// 
+addCoffeGif();
