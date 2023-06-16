@@ -7,7 +7,7 @@ import {
 import { getDatabase } from "./panel/database.js";
 
 // Listado de contactos
-const CONTACT_JSON = "/src/db/contactos.json";
+const CONTACT_JSON = "/src/data/contactos.json";
 export async function loadContact() {
   const contactosDom = document.getElementById("contactos");
   if (contactosDom) {

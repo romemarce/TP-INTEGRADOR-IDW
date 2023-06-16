@@ -1,17 +1,18 @@
 // Loaders
-import { loadContact, loadCarreras, loadFooter, loadBannerAndNews, loadSingleNews, loadLinkThree } from './components.js';
+import {
+  loadContact,
+  loadCarreras,
+  loadFooter,
+  loadBannerAndNews,
+  loadSingleNews,
+} from "./components.js";
 
-import { showHeaderMenu } from './routes.js'
-showHeaderMenu()
+import { showHeaderMenu } from "./routes.js";
+showHeaderMenu();
 
 // loaders
 loadFooter();
 loadCarreras();
 loadContact();
-
-
-
 loadBannerAndNews();
-
-
 loadSingleNews();

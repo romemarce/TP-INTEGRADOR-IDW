@@ -29,7 +29,6 @@ export const addNewElement = (element, collection) => {
     db[collection].push({ ...element, id });
   }
   setDatabase(db);
-  sendNotification(`Elemento '${collection}' creado`);
 };
 
 /**
@@ -86,12 +85,18 @@ export const searchElements = (collection, searchBy = "id", search = "") => {
   let result = [];
   // corregir RoMe
   if (searchBy === "lastnameOrName") {
-    result = db[collection].filter(
-      (e) =>
-        String(e?.name).includes(search) || String(e?.lastname).includes(search)
-    );
+    result = db[collection].filter((e) => {
+      const fullName = `${e?.name} ${e?.lastname}`.toLowerCase();
+      return fullName.includes(search.toLowerCase());
+    });
   } else {
-    result = db[collection].filter((e) => e[searchBy] === search);
+
+    const text = (e)=>String(e[searchBy]).toLowerCase();
+    const searchParam = String(search).toLowerCase();
+
+
+
+    result = db[collection].filter((e) => text(e).includes(searchParam));
   }
 
   if (result.length > 0) return result;

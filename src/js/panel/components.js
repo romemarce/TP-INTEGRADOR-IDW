@@ -1,11 +1,14 @@
 import { getDatabase } from "./database.js";
 
-export const getCurrentDay = () => {
-  const date = new Date();
-  let d = date.getDate();
-  let m = date.getMonth() + 1;
-  let y = date.getFullYear();
-  return `${d}/${m}/${y}`;
+export const showCurrentDay = () => {
+  const domPanelDate = document.getElementById("panel-date");
+  if (domPanelDate) {
+    const date = new Date();
+    let d = date.getDate();
+    let m = date.getMonth() + 1;
+    let y = date.getFullYear();
+    domPanelDate.innerHTML = `${d}/${m}/${y}`;
+  }
 };
 
 export const loadProfile = () => {

@@ -1,11 +1,11 @@
 import { initDatabase } from "./database.js";
 import { showHeaderPanel } from "./routes.js";
 import {
-  getCurrentDay,
   loadProfile,
   addButtonResponsive,
   addPanelCounter,
   addCoffeGif,
+  showCurrentDay,
 } from "./components.js";
 import { loadMateriaFormFunction } from "./models/materias.js";
 import { loadCarreraFormFunction } from "./models/carreras.js";
@@ -13,67 +13,34 @@ import { loadEstudianteFormFunction } from "./models/estudiantes.js";
 import { loadCollectionList } from "./models/utils.js";
 import { collections } from "./models/controller.js";
 import { loadInscripcionFormFunction } from "./models/inscripcion.js";
-import { importJsonData } from "./imports/index.js";
+import { loadImportButton } from "./imports/index.js";
 
 loadProfile();
 showHeaderPanel();
 initDatabase();
 
-const domPanelDate = document.getElementById("panel-date");
-if (domPanelDate) {
-  domPanelDate.innerHTML = getCurrentDay();
-}
+showCurrentDay();
 
-const importDatabase = document.getElementById("import-database");
-if (importDatabase)
-  importDatabase.addEventListener("click", (e) => {
-    e.preventDefault();
-    importJsonData();
-  });
+loadImportButton();
 
-/**
- *  ------------------
- *     MATERIAS
- *  ------------------
- */
+// MATERIAS
 loadMateriaFormFunction();
 loadCollectionList("materia-result", collections.materia);
 
-/**
- *  ------------------
- *     CARRERAS
- *  ------------------
- */
+// CARRERAS
 loadCarreraFormFunction();
 loadCollectionList("carrera-result", collections.carrera);
 
-/**
- *  ------------------
- *     ESTUDIANTES
- *  ------------------
- */
-
+// ESTUDIANTES
 loadEstudianteFormFunction();
-loadCollectionList("estudiante-result", collections.estudiante, "dni");
+loadCollectionList("estudiante-result", collections.estudiante);
 
-/**
- *  ------------------
- *     INSCRIPCIONES
- *  ------------------
- */
-
+// INSCRIPCIONES
 loadInscripcionFormFunction();
-// loadCollectionList("estudiante-result", collections.estudiante, "dni");
 
-/**
- *  ------------------
- *     RESPONSIVE
- *  ------------------
- */
+/// RESPONSIVE
 addButtonResponsive();
 addPanelCounter();
 
-
-
-// 
+// EXTRA
 addCoffeGif();

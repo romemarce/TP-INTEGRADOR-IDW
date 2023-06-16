@@ -33,10 +33,7 @@ const createArticleItem = (item, buttonName, action) => {
  * @param {materias} materias
  */
 
-const loadAsignaturas = (
-  materiasId = [],
-  dni
-) => {
+const loadAsignaturas = (materiasId = [], dni) => {
   const db = getDatabase();
   const materiasList = getListObjetCollection(db?.materias, materiasId, "id");
   const asignaturasDom = document.getElementById("asignaturas");
@@ -114,8 +111,7 @@ const loadProfileEstudiante = (e = {}) => {
                 ${carrera ? `<li>Carrera: ${carrera.name}</li>` : ""}
             </ul>
         `;
-    carrera?.materias &&
-      loadAsignaturas(carrera.materias, e?.dni);
+    carrera?.materias && loadAsignaturas(carrera.materias, e?.dni);
     refreshInscripciones(e?.dni);
   }
 };
@@ -131,28 +127,32 @@ const handleSelectItem = (e, dni) => {
 };
 
 const loadEstudianteResult = () => {
-  const list = estudiantes;
+  const list = estudiantes || [];
   const domContent = document.getElementById("search-result-content");
   const dom = document.getElementById("search-result");
+  dom.innerHTML = "";
   if (dom) {
-    dom.innerHTML = "";
-    list.forEach((e) => {
-      let article = document.createElement("article");
-      article.classList.add("table-list-item");
-      article.id = e.dni;
-      article.innerHTML = `<span>${e.dni}</span><span>${e.name}</span>`;
-
-      let buttonSelect = document.createElement("button");
-      buttonSelect.type = "search"; //cambiar
-      buttonSelect.addEventListener("click", (el) =>
-        handleSelectItem(el, e.dni)
-      );
-      buttonSelect.innerHTML = "Elegir";
-
-      article.append(buttonSelect);
-
-      dom.append(article);
-    });
+    if (list.length > 0) {
+      list.forEach((e) => {
+        let article = document.createElement("article");
+        article.classList.add("table-list-item");
+        article.id = e.dni;
+        article.innerHTML = `<span>${e.dni}</span><span>${e.name}</span>`;
+  
+        let buttonSelect = document.createElement("button");
+        buttonSelect.type = "search"; //cambiar
+        buttonSelect.addEventListener("click", (el) =>
+          handleSelectItem(el, e.dni)
+        );
+        buttonSelect.innerHTML = "Elegir";
+  
+        article.append(buttonSelect);
+  
+        dom.append(article);
+      });
+    }else{
+      dom.innerHTML = "<center> No se encontraron estudiantes </center>"
+    }
     if (domContent) {
       domContent.removeAttribute("hidden");
     }
@@ -182,9 +182,9 @@ export const loadInscripcionFormFunction = () => {
         searchConfig.s
       );
 
-      if (estudiantes) {
+      // if (estudiantes) {
         loadEstudianteResult();
-      }
+      // }
     });
   }
 };

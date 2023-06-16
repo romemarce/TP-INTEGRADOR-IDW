@@ -1,21 +1,9 @@
 import { reloadPage, sendNotification } from "../components.js";
-import {
-  addNewElement,
-  collections,
-  searchElement,
-} from "./controller.js";
-
-const Materia = {
-  name: "",
-  hours: 0,
-  type: "",
-};
+import { addNewElement, collections, searchElement } from "./controller.js";
 
 export const loadMateriaFormFunction = () => {
   const formDom = document.getElementById("materia-form");
   if (formDom) {
-    let newMateria = Materia;
-
     formDom.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -35,6 +23,7 @@ export const loadMateriaFormFunction = () => {
       } else {
         // agregar item
         addNewElement(newMateria, collections.materia);
+        sendNotification("Materia creada!!");
         reloadPage();
       }
     });

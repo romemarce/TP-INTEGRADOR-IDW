@@ -40,9 +40,10 @@ export const loadEstudianteFormFunction = () => {
         // chequear si existe
         if (searchElement(collections.estudiante, "dni", newEstudiante)) {
             sendNotification("El estudiante ya existe");
-        }else{
-          // agregar item
-          addNewElement(newEstudiante, collections.estudiante)
+          }else{
+            // agregar item
+            addNewElement(newEstudiante, collections.estudiante)
+            sendNotification("Estudiante creado");
           reloadPage();
         }
       });

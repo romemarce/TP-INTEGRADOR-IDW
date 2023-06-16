@@ -1,7 +1,7 @@
+import { sendNotification } from "../components.js";
 import { getDatabase, setDatabase } from "../database.js";
 import { addNewElement, collections, getElements, reloadPage, removeElement, searchElement } from "./controller.js";
 
-// Incompleto
 const sectionMateria = document.getElementById("section-materia");
 
 const db = getDatabase();
@@ -12,12 +12,6 @@ const currentMaterias = {
 };
 
 if (db?.materias) currentMaterias.optionList = db?.materias || [];
-// if (db?.carreras) {
-//   const carreras = db?.carreras || []
-//   const result = carreras.filter(e => !currentMaterias.optionList.includes(e.materias))
-
-//   console.log(result);
-// }
 
 const updateMateriaList = () => {
   const listDom = document.getElementById("selected-list");
@@ -88,7 +82,7 @@ const loadMateriasInCarrera = () => {
           (e) => parseInt(e.id) === parseInt(id)
         )[0];
 
-        // Quitar del listado select dom
+        // Quita el elemento del select dom
         Object.values(selectOptions.childNodes).forEach(
           (e) => parseInt(e.value) === parseInt(id) && e.remove()
         );
@@ -128,10 +122,11 @@ export const loadCarreraFormFunction = () => {
 
       // chequear si existe
       if (searchElement(collections.carrera, "name", newCarrera)) {
-        console.log("la carrera ya existe");
+        sendNotification("La materia ya existe");
       }else{
         // agregar item
         addNewElement(newCarrera, collections.carrera)
+        sendNotification("Carrera creada!!");
         reloadPage();
       }
     });
