@@ -4,6 +4,7 @@ import {
   URL_FCAD_PORTAL,
   URL_FCAD_SINGLE,
 } from "./connexions.js";
+import { getDatabase } from "./panel/database.js";
 
 // Listado de contactos
 const CONTACT_JSON = "/src/db/contactos.json";
@@ -22,29 +23,26 @@ export async function loadContact() {
 }
 
 // Listado de carreras
-export const loadCarreras = async () => {
-  const carreraDom = document.getElementById("carrera");
-  if (carreraDom) {
-    carreraDom.innerHTML = "";
-    await fetch("./src/db/carreras.json")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.length > 0) {
-          data.forEach(({ name, type, year, mod }) => {
-            carreraDom.innerHTML += `
-            <article class="post-carrera">
-                  <h3>${name}</h3>
-                  <div class="post-carrera-items">
-                    <span>${type}</span>
-                    <span>${year}</span>
-                    <span>${mod}</span>
-                  </div>
-                </article>
-                `;
-          });
-        }
-      })
-      .catch((err) => console.log(err));
+export const loadCarreras = () => {
+  const content = document.getElementById("carrera");
+  const { carreras } = getDatabase();
+
+  if (content && carreras) {
+    content.innerHTML = "";
+    if (carreras.length > 0) {
+      carreras.forEach(({ name, type, year, mod }) => {
+        content.innerHTML += `
+          <article class="post-carrera">
+               <h3>${name}</h3>
+               <div class="post-carrera-items">
+                 <span>${type}</span>
+                 <span>${year}</span>
+                 <span>${mod}</span>
+               </div>
+            </article>
+             `;
+      });
+    }
   }
 };
 
@@ -174,7 +172,6 @@ const loadBanner = async () => {
 
     if (configBanner.postList.length > 0) {
       configBanner.counterMax = configBanner.postList.length - 1;
-      // console.log(configBanner);
     }
 
     const previusBanner = (e) => {
@@ -220,7 +217,7 @@ const loadNews = async () => {
   const newsDom = document.getElementById("portal-news");
   newsDom.innerHTML = "";
   if (result.length > 0) {
-    result.forEach(({ content, featured_media_img, id, title }) => {
+    result.forEach(({featured_media_img, id, title }) => {
       newsDom.innerHTML += `
       <article class="loop-post">
         <img src="${featured_media_img}" alt="${title}">
@@ -232,7 +229,7 @@ const loadNews = async () => {
   }
 };
 
-export const loadLinkThree = (parentDom) => {
+export const loadLinkThree = () => {
   const linkThree = [
     {
       name: "Plan Estratégico 2017-2054",
@@ -250,11 +247,11 @@ export const loadLinkThree = (parentDom) => {
       name: "Campus Virtual",
       url: "https://campus.uner.edu.ar/fcad/course/index.php",
     },
-    { 
+    {
       name: "Digesto Online",
       url: "https://digesto.uner.edu.ar/",
     },
-    { 
+    {
       name: "Biblioteca Digital",
       url: "https://www.fcad.uner.edu.ar/biblioteca/",
     },
@@ -265,24 +262,24 @@ export const loadLinkThree = (parentDom) => {
     {
       name: "Concursos Docentes",
       url: "https://www.fcad.uner.edu.ar/concursos-docentes/",
-    }
+    },
   ];
-  const section = document.createElement("section")
+  const section = document.createElement("section");
   section.classList.add("container-columnselec");
   const column = document.createElement("div");
   column.classList.add("columns-4", "gap-20", "column-center");
 
   let allLinksDom = "";
 
-  linkThree.forEach(({name, url}) => {
+  linkThree.forEach(({ name, url }) => {
     allLinksDom += `<a href="${url}" target="_blank" class="elementor-container">${name}</a>`;
   });
-  
+
   column.innerHTML = allLinksDom;
 
   section.append(column);
   const linkThreeDom = document.getElementById("link-tree");
-  if (linkThreeDom) linkThreeDom.append(section)
+  if (linkThreeDom) linkThreeDom.append(section);
 };
 
 export const loadBannerAndNews = async () => {

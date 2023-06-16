@@ -28,9 +28,9 @@ export const showHeaderMenu = () => {
   const ulDom = document.createElement("ul");
   ulDom.classList.add("menu-list");
   routes.forEach((route) => {
-    ulDom.innerHTML += `<li class="menu-item ${route?.className ? route.className : ""
-      }"><a href="${route.url}">${route.name}</a></li>`;
+    ulDom.innerHTML += `<li class="menu-item ${
+      route?.className ? route.className : ""
+    }"><a href="${route.url}">${route.name}</a></li>`;
   });
   menuDom.append(ulDom);
 };
-
