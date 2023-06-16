@@ -1,35 +1,81 @@
-// search-form
-import {
-  collections,
-  getElements,
-  searchElementByName,
-  searchElements,
-} from "./controller.js";
+import { getDatabase, setDatabase } from "../database.js";
+import { collections, getElements, searchElements } from "./controller.js";
+import { getListObjetCollection } from "./utils.js";
 
 let estudiantes = false;
+
 const SearchConfig = {
   s: "",
 };
 
-const loadSearchMateriaForm = () => {
-  const form = document.getElementById("search-materia");
-  let search = SearchConfig;
-  if (form) {
-    console.log("CONTINUAR ACA")
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+const createArticleItem = (item, buttonName, action) => {
+  const elementId = "item-list-" + String(item.id);
 
-      let inputs = e.target.querySelector("#inputs");
-      inputs.childNodes.forEach((e) => {
-        if (["input"].includes(String(e.tagName).toLocaleLowerCase())) {
-          search = { ...search, [e.name]: e.value || "" };
-        }
-      });
+  let article = document.createElement("article");
+  article.classList.add("table-list-item");
+  article.id = elementId;
+  article.innerHTML = `<span>${item.id}</span><span>${item.name}</span>`;
 
-      let materias = searchElementByName(collections.materia, search.s);
+  if (action !== null) {
+    let button = document.createElement("button");
+    button.type = "info";
+    button.addEventListener("click", () => action(item.id));
+    button.innerHTML = buttonName;
 
-      if (materias) {
-        console.log(materias);
+    article.append(button);
+  }
+
+  return article;
+};
+
+/**
+ * Carga las materias en el form
+ * @param {materias} materias
+ */
+
+const loadAsignaturas = (
+  materiasId = [],
+  dni
+) => {
+  const db = getDatabase();
+  const materiasList = getListObjetCollection(db?.materias, materiasId, "id");
+  const asignaturasDom = document.getElementById("asignaturas");
+  if (asignaturasDom) {
+    asignaturasDom.innerHTML = "";
+    materiasList.forEach((item) => {
+      asignaturasDom.append(
+        createArticleItem(item, "Inscribir", (id) => {
+          db?.estudiantes.forEach((estudiante) => {
+            if (parseInt(estudiante.dni) === parseInt(dni)) {
+              if (!estudiante.inscripcion.includes(id)) {
+                estudiante.inscripcion.push(id);
+                setDatabase(db);
+                refreshInscripciones(estudiante.dni);
+              }
+            }
+          });
+        })
+      );
+    });
+  }
+};
+
+const refreshInscripciones = (dni) => {
+  const inscripcionesDom = document.getElementById("inscripciones");
+  inscripcionesDom.innerHTML = "";
+  if (inscripcionesDom) {
+    const db = getDatabase();
+    db?.estudiantes.forEach((estudiante) => {
+      if (parseInt(estudiante.dni) === parseInt(dni)) {
+        const list = getListObjetCollection(
+          db?.materias,
+          estudiante?.inscripcion,
+          "id"
+        );
+
+        list.forEach((item) => {
+          inscripcionesDom.append(createArticleItem(item, "Deinscribir", null));
+        });
       }
     });
   }
@@ -68,22 +114,25 @@ const loadProfileEstudiante = (e = {}) => {
                 ${carrera ? `<li>Carrera: ${carrera.name}</li>` : ""}
             </ul>
         `;
-
-    loadSearchMateriaForm();
+    carrera?.materias &&
+      loadAsignaturas(carrera.materias, e?.dni);
+    refreshInscripciones(e?.dni);
   }
 };
 
 const handleSelectItem = (e, dni) => {
   e.preventDefault();
-  console.log("seleciona", dni);
 
   if (estudiantes) {
-    loadProfileEstudiante(estudiantes.filter((e) => e.dni === dni)[0]);
+    const estudiante = estudiantes.filter((e) => e.dni === dni)[0];
+
+    loadProfileEstudiante(estudiante);
   }
 };
 
 const loadEstudianteResult = () => {
   const list = estudiantes;
+  const domContent = document.getElementById("search-result-content");
   const dom = document.getElementById("search-result");
   if (dom) {
     dom.innerHTML = "";
@@ -104,6 +153,9 @@ const loadEstudianteResult = () => {
 
       dom.append(article);
     });
+    if (domContent) {
+      domContent.removeAttribute("hidden");
+    }
   }
 };
 

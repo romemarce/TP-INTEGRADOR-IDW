@@ -38,30 +38,37 @@
                 </section>
               </form>
               <!-- Listado de elementos -->
-              <section class="table-list mt-3 mb-3" id="">
-                <h2 class="table-list-title">Resultados:</h2>
+              <section
+                class="table-list mt-3 mb-3"
+                id="search-result-content"
+                hidden
+              >
+                <h2 class="table-list-title">Estudiantes:</h2>
                 <section id="search-result"></section>
               </section>
 
               <!-- <hr> -->
-              <form id="inscripcion-form">
-                <div class="columns-1 profile-estudiante mb-3" id="profile-estudiante"></div>
-                <form id="search-materia" class="columns-3 gap-10">
-                  <input type="text" name="s" placeholder="Buscar materia" />
-                  <button type="search">Buscar</button>
-                </form>
+              <section
+                class="profile-estudiante mb-3"
+                id="profile-estudiante"
+              ></section>
+              <section class="columns-2 gap-10">
+                <article class="table-list mt-3">
+                  <h2 class="table-list-title">Asignaturas</h2>
+                  <section id="asignaturas"></section>
+                </article>
 
-                <section id="inputs"></section>
-                <div class="form-buttons">
-                  <button type="reset">Limpiar</button>
-                  <button type="submit">Crear</button>
-                </div>
-              </form>
+                <article class="table-list mt-3">
+                  <h2 class="table-list-title">Inscripciones</h2>
+                  <section id="inscripciones"></section>
+                </article>
+              </section>
             </section>
+
             <!-- Listado de elementos -->
             <section class="table-list mt-3">
               <h2 class="table-list-title">Inscripciones</h2>
-              <section id="inscripcion-result"></section>
+              <section id="inscripcion-list"></section>
             </section>
           </section>
         </section>

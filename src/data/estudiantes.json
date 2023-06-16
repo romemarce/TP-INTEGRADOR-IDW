@@ -7,7 +7,8 @@
     "nationality": "Argentina",
     "email": "juan@example.com",
     "phone": 1234567890,
-    "carrera": 1
+    "carrera": 1,
+    "inscripcion": []
   },
   {
     "dni": 98765432,
@@ -17,6 +18,7 @@
     "nationality": "México",
     "email": "maria@example.com",
     "phone": 9876543210,
-    "carrera": 2
+    "carrera": 2,
+    "inscripcion": []
   }
 ]

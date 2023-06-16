@@ -158,6 +158,8 @@
 }
 
 .profile-estudiante {
+  max-width: 80%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 64px auto;
   gap: 20px;

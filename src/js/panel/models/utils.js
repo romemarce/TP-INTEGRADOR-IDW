@@ -12,17 +12,14 @@ const handleDeleteItem = (e) => {
   }
 };
 
-const handleEditItem = (e, idParam)=>{
+const handleEditItem = (e, idParam) => {
   e.preventDefault();
 
   let item = document.getElementById(e.target.parentNode.id);
   let itemId = item.id.replace("item-list-", "");
 
-
   alert(itemId, idParam);
-
-}
-
+};
 
 /**
  * Obtiene los elementos de una coleccion.
@@ -60,4 +57,23 @@ export const loadCollectionList = (dom_id, collection, id = "id") => {
       dom.append(article);
     });
   }
+};
+
+/**
+ * 
+ * @param {collection} collection 
+ * @param {listId} listado de ids 
+ * @param {key} clave 
+ * @returns
+ */
+
+export const getListObjetCollection = (collection, listId, key = "id") => {
+  const result = [];
+  collection.forEach((item) => {
+    // listId : [1,23,4,5,6] ids
+    if (listId.includes(parseInt(item[key]))) {
+      result.push(item);
+    }
+  });
+  return result;
 };

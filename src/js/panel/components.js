@@ -102,19 +102,21 @@ export const reloadPage = (time = 3000) =>
 
 export const addCoffeGif = async () => {
   const dom = document.getElementById("gif-coffe");
-  const API = "waaQ5dSVmlVQIkCVMQGOsVRCUU0Qh75K";
+  if (dom) {
+    const API = "waaQ5dSVmlVQIkCVMQGOsVRCUU0Qh75K";
 
-  await fetch(
-    `https://api.giphy.com/v1/gifs/search?api_key=${API}&q=coffe&limit=20&offset=0&rating=g&lang=es`
-  )
-    .then((res) => res.json())
-    .then(({ data, meta }) => {
-      if (meta.status === 200) {
-        const index = Math.floor(Math.random() * 20) + 1;
-        const gif = data[index]?.images?.original?.url
+    await fetch(
+      `https://api.giphy.com/v1/gifs/search?api_key=${API}&q=coffe&limit=20&offset=0&rating=g&lang=es`
+    )
+      .then((res) => res.json())
+      .then(({ data, meta }) => {
+        if (meta.status === 200) {
+          const index = Math.floor(Math.random() * 20) + 1;
+          const gif = data[index]?.images?.original?.url;
 
-        dom.innerHTML = `<img src="${gif}" alt="coffe" />`
-      }
-    })
-    .catch((err) => console.log(err));
+          dom.innerHTML = `<img src="${gif}" alt="coffe" />`;
+        }
+      })
+      .catch((err) => console.log(err));
+  }
 };
