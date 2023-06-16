@@ -18,7 +18,7 @@ const createArticleItem = (item, buttonName, action) => {
 
   if (action !== null) {
     let button = document.createElement("button");
-    button.type = "info";
+    button.type = "submit";
     button.addEventListener("click", () => action(item.id));
     button.innerHTML = buttonName;
 
