@@ -1,22 +1,22 @@
 [
   {
-    "dni": 12345678,
-    "lastname": "Pérez",
-    "name": "Juan",
-    "date": "1990-01-01",
+    "dni": 37702921,
+    "lastname": "Romero",
+    "name": "Marcelo",
+    "date": "1994-11-26",
     "nationality": "Argentina",
-    "email": "juan@example.com",
+    "email": "marcelo@example.com",
     "phone": 1234567890,
     "carrera": 1,
     "inscripcion": []
   },
   {
-    "dni": 98765432,
-    "lastname": "López",
-    "name": "María",
-    "date": "1992-05-10",
-    "nationality": "México",
-    "email": "maria@example.com",
+    "dni": 38543669,
+    "lastname": "Panozzo",
+    "name": "Facundo",
+    "date": "1994-12-28",
+    "nationality": "Argentina",
+    "email": "facundo@example.com",
     "phone": 9876543210,
     "carrera": 2,
     "inscripcion": []
